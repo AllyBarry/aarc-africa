@@ -1,11 +1,158 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="AARC — Akili African Robotics Community"
+  description="A sleek Astro + Tailwind landing page for the Akili African Robotics Community."
+>
+  <Navbar />
+  <Hero />
+
+  <main>
+    <section id="about" class="relative mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
+        <SectionHeading
+          eyebrow="About AARC"
+          title="An African robotics platform built for research, learning, and collaboration."
+          text="AARC brings together builders, researchers, students, and innovators shaping intelligent systems across the continent. The interface reflects precision, energy, connectivity, and a strong African identity."
+        />
+
+        <div class="reveal relative">
+          <div class="panel rounded-[2rem] p-8">
+            <div class="grid grid-cols-3 gap-4">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                <div class="text-2xl font-bold text-orange-300">12+</div>
+                <div class="mt-2 text-sm text-slate-400">Research themes</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                <div class="text-2xl font-bold text-orange-300">30+</div>
+                <div class="mt-2 text-sm text-slate-400">Community contributors</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                <div class="text-2xl font-bold text-orange-300">Pan-African</div>
+                <div class="mt-2 text-sm text-slate-400">Network vision</div>
+              </div>
+            </div>
+
+            <div class="mt-8 space-y-4">
+              <div class="h-3 overflow-hidden rounded-full bg-white/5">
+                <div class="h-full w-[82%] rounded-full bg-gradient-to-r from-orange-500 to-amber-300"></div>
+              </div>
+              <div class="h-3 overflow-hidden rounded-full bg-white/5">
+                <div class="h-full w-[68%] rounded-full bg-gradient-to-r from-cyan-400 to-sky-300"></div>
+              </div>
+              <div class="h-3 overflow-hidden rounded-full bg-white/5">
+                <div class="h-full w-[90%] rounded-full bg-gradient-to-r from-orange-500 to-amber-200"></div>
+              </div>
+            </div>
+
+            <div class="mt-8 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-5 text-sm leading-7 text-slate-300">
+              From autonomous systems and embedded AI to education, workshops, and open collaboration,
+              AARC should feel like a digital control room for African robotics progress.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <SectionHeading
+        eyebrow="Projects"
+        title="Research, experimentation, and real-world robotics applications."
+        text="Use cards for labs, initiatives, events, research streams, and demos. The hover motion and glow effects keep the page feeling dynamic without becoming noisy."
+      />
+
+      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div class="reveal">
+          <ProjectCard
+            title="Multi-Agent Robotics"
+            text="Distributed perception, cooperative autonomy, and communication-aware systems for challenging environments."
+            tags={["Autonomy", "Coordination", "Control"]}
+          />
+        </div>
+        <div class="reveal">
+          <ProjectCard
+            title="Computer Vision & AI"
+            text="Vision-guided intelligence for robotics, inspection, navigation, and human-robot interaction."
+            tags={["Vision", "ML", "Embodied AI"]}
+          />
+        </div>
+        <div class="reveal">
+          <ProjectCard
+            title="Community Challenges"
+            text="Hackathons, workshops, and shared build sprints that grow local capability and collaboration."
+            tags={["Education", "Events", "Open Source"]}
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="network" class="relative overflow-hidden py-24">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,122,26,0.08),transparent_42%)]"></div>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <SectionHeading
+            eyebrow="African Innovation Network"
+            title="A connected continental identity."
+            text="This section draws from the Africa silhouette in the logo. It can evolve into an interactive map of chapters, labs, universities, robotics groups, and events."
+          />
+
+          <div class="reveal relative">
+            <div class="panel relative min-h-[420px] rounded-[2rem] p-6">
+              <div class="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_30%_20%,rgba(255,179,71,0.12),transparent_25%),radial-gradient(circle_at_70%_80%,rgba(0,194,255,0.08),transparent_25%)]"></div>
+
+              <div class="absolute inset-6 rounded-[1.5rem] border border-white/10 bg-[#0c131b]">
+                <div class="absolute inset-0 bg-center bg-contain bg-no-repeat opacity-20"></div>
+
+                <span class="absolute left-[28%] top-[32%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"></span>
+                <span class="absolute left-[47%] top-[44%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"></span>
+                <span class="absolute left-[55%] top-[58%] h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(0,194,255,0.8)]"></span>
+                <span class="absolute left-[64%] top-[40%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"></span>
+
+                <div class="glow-line absolute left-[29%] top-[33%] h-[2px] w-[20%] rotate-[18deg]"></div>
+                <div class="glow-line absolute left-[47%] top-[45%] h-[2px] w-[14%] rotate-[36deg]"></div>
+                <div class="glow-line absolute left-[50%] top-[47%] h-[2px] w-[18%] -rotate-[12deg]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <div class="reveal panel orange-glow rounded-[2rem] p-8 md:p-12">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">
+              Join the movement
+            </p>
+            <h2 class="mt-3 text-3xl font-bold text-white md:text-5xl">
+              Build the future of robotics in Africa.
+            </h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+              Invite researchers, students, labs, startups, and makers to collaborate
+              through open projects, events, and shared robotics knowledge.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4 lg:justify-end">
+            <a href="#" class="primary-btn">Apply to Join</a>
+            <a href="#" class="secondary-btn">View Community Charter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-500">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <p>© 2026 Akili African Robotics Community</p>
+      <p>Robotics • AI • Research • Africa</p>
+    </div>
+  </footer>
+</BaseLayout>

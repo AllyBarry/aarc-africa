@@ -1,0 +1,15 @@
+---
+export interface Props {
+  kicker: string;
+  title: string;
+  intro?: string;
+}
+
+const { kicker, title, intro } = Astro.props;
+---
+
+<div class="mx-auto max-w-3xl text-center">
+  <p class="section-kicker">{kicker}</p>
+  <h2 class="font-display mt-4 text-3xl font-semibold md:text-4xl">{title}</h2>
+  {intro && <p class="mt-4 text-lg leading-8 text-soft">{intro}</p>}
+</div>

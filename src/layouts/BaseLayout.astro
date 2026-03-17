@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Akili African Robotics Community",
+  description = "AARC — advancing robotics, AI, and intelligent systems across Africa.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen antialiased selection:bg-orange-400/30 selection:text-white">
+    <slot />
+
+    <script is:inline>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("in-view");
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      const nav = document.querySelector("[data-nav]");
+      const onScroll = () => {
+        if (!nav) return;
+        if (window.scrollY > 24) {
+          nav.classList.add("bg-[#081018]/80", "backdrop-blur-xl", "border-white/10");
+        } else {
+          nav.classList.remove("bg-[#081018]/80", "backdrop-blur-xl", "border-white/10");
+        }
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll);
+    </script>
+  </body>
+</html>
