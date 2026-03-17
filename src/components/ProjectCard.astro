@@ -3,8 +3,9 @@ interface Props {
   title: string;
   text: string;
   tags: string[];
+  buttonUrl?: string;
 }
-const { title, text, tags } = Astro.props;
+const { title, text, tags, buttonUrl } = Astro.props;
 ---
 
 <article class="project-card panel rounded-3xl p-6">
@@ -21,4 +22,15 @@ const { title, text, tags } = Astro.props;
       </span>
     ))}
   </div>
+
+  {buttonUrl && (
+    <a
+      href={buttonUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-flex items-center rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600 transition-colors"
+    >
+      Visit Website
+    </a>
+  )}
 </article>

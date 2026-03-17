@@ -67,26 +67,37 @@ import ProjectCard from "../components/ProjectCard.astro";
         text="Use cards for labs, initiatives, events, research streams, and demos. The hover motion and glow effects keep the page feeling dynamic without becoming noisy."
       />
 
-      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3 items-stretch">
         <div class="reveal">
           <ProjectCard
-            title="Multi-Agent Robotics"
-            text="Distributed perception, cooperative autonomy, and communication-aware systems for challenging environments."
-            tags={["Autonomy", "Coordination", "Control"]}
+            title="Workshop on Robotics at the Deep Learning Indaba 2023"
+            text="Learn more about robotics at the Deep Learning Indaba 2023."
+            tags={["Workshops", "Education", "AI"]}
+            buttonUrl="https://sites.google.com/view/robotlearning4africa"
           />
         </div>
         <div class="reveal">
           <ProjectCard
-            title="Computer Vision & AI"
-            text="Vision-guided intelligence for robotics, inspection, navigation, and human-robot interaction."
-            tags={["Vision", "ML", "Embodied AI"]}
+            title="2nd Workshop on Robotics at the Deep Learning Indaba 2024"
+            text="Learn more about the 2nd workshop on robotics at the Deep Learning Indaba 2024."
+            tags={["Workshops", "Robotics", "Deep Learning"]}
+            buttonUrl="https://sites.google.com/view/robotlearning4africa-2024"
           />
         </div>
         <div class="reveal">
           <ProjectCard
-            title="Community Challenges"
-            text="Hackathons, workshops, and shared build sprints that grow local capability and collaboration."
-            tags={["Education", "Events", "Open Source"]}
+            title="ICRA@40 - Africa, Satellite Event"
+            text="Look back on the IEEE ICRA@40 satellite event, hosted at Wits University in 2024."
+            tags={["Events", "ICRA", "Africa"]}
+            buttonUrl="https://icra40.ieee.org/icra-2024/icra40-africa/"
+          />
+        </div>
+        <div class="reveal">
+          <ProjectCard
+            title="3rd Workshop on Robotics at the Deep Learning Indaba 2025"
+            text="Learn more about the 3rd workshop on robotics at the Deep Learning Indaba 2025."
+            tags={["Workshops", "Future", "Innovation"]}
+            buttonUrl="https://sites.google.com/view/robot-learning-for-africa-2025/home"
           />
         </div>
       </div>
