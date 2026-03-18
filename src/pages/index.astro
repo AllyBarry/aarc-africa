@@ -15,92 +15,191 @@ import ProjectCard from "../components/ProjectCard.astro";
 
   <main>
     <section id="about" class="relative mx-auto max-w-7xl px-6 py-24 lg:px-8">
-      <div class="grid items-center gap-10 lg:grid-cols-2">
-        <SectionHeading
-          eyebrow="About AARC"
-          title="An African robotics platform built for research, learning, and collaboration."
-          text="AARC brings together builders, researchers, students, and innovators shaping intelligent systems across the continent. The interface reflects precision, energy, connectivity, and a strong African identity."
-        />
+      <div class="grid items-start gap-10 lg:grid-cols-2">
+        <div>
+          <SectionHeading
+            eyebrow="About AARC"
+            title="A growing continental robotics community."
+            text="AARC connects researchers, students, engineers, and innovators building intelligent systems across Africa. We're actively expanding — check back for updates on new programs and opportunities."
+          />
 
+          <!-- Coming soon items -->
+          <div class="reveal mt-10 space-y-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Coming soon</p>
+            {[
+              { label: "Annual Robotics Workshop",    note: "Returning in 2026 at the Deep Learning Indaba" },
+              { label: "African Robotics Summer School", note: "A multi-day intensive — currently in planning" },
+              { label: "Outreach &amp; School Programs",  note: "Bringing robotics to the next generation" },
+             ].map(item => (
+              <div class="flex items-start gap-4 rounded-2xl border border-white/6 bg-white/3 px-5 py-4">
+                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400/60"></span>
+                <div>
+                  <div class="text-sm font-semibold text-white" set:html={item.label} />
+                  <div class="mt-0.5 text-sm text-slate-400">{item.note}</div>
+                </div>
+                <span class="ml-auto shrink-0 rounded-full border border-amber-400/25 bg-amber-400/10 px-2.5 py-0.5 text-xs text-amber-300">Soon</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Stats panel -->
         <div class="reveal relative">
           <div class="panel rounded-[2rem] p-8">
-            <div class="grid grid-cols-3 gap-4">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                <div class="text-2xl font-bold text-orange-300">12+</div>
-                <div class="mt-2 text-sm text-slate-400">Research themes</div>
+            <p class="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">By the numbers</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+                <div class="text-3xl font-bold text-orange-300">21+</div>
+                <div class="mt-2 text-sm text-slate-400">Countries represented</div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                <div class="text-2xl font-bold text-orange-300">30+</div>
-                <div class="mt-2 text-sm text-slate-400">Community contributors</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+                <div class="text-3xl font-bold text-orange-300">50+</div>
+                <div class="mt-2 text-sm text-slate-400">Workshop attendees</div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                <div class="text-2xl font-bold text-orange-300">Pan-African</div>
-                <div class="mt-2 text-sm text-slate-400">Network vision</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+                <div class="text-3xl font-bold text-orange-300">3</div>
+                <div class="mt-2 text-sm text-slate-400">Annual workshops held</div>
               </div>
-            </div>
-
-            <div class="mt-8 space-y-4">
-              <div class="h-3 overflow-hidden rounded-full bg-white/5">
-                <div class="h-full w-[82%] rounded-full bg-gradient-to-r from-orange-500 to-amber-300"></div>
-              </div>
-              <div class="h-3 overflow-hidden rounded-full bg-white/5">
-                <div class="h-full w-[68%] rounded-full bg-gradient-to-r from-cyan-400 to-sky-300"></div>
-              </div>
-              <div class="h-3 overflow-hidden rounded-full bg-white/5">
-                <div class="h-full w-[90%] rounded-full bg-gradient-to-r from-orange-500 to-amber-200"></div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+                <div class="text-3xl font-bold text-orange-300">Pan&#8209;African</div>
+                <div class="mt-2 text-sm text-slate-400">Partner labs &amp; institutions</div>
               </div>
             </div>
 
-            <div class="mt-8 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-5 text-sm leading-7 text-slate-300">
-              From autonomous systems and embedded AI to education, workshops, and open collaboration,
-              AARC should feel like a digital control room for African robotics progress.
+            <div class="mt-6 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-5 text-sm leading-7 text-slate-300">
+              Our community is growing. Join the Discord to stay informed about upcoming workshops,
+              the summer school, and outreach opportunities as they are announced.
             </div>
+
+            <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="primary-btn mt-6 w-full justify-center">
+              Join the community
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <section id="events" class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <SectionHeading
-        eyebrow="Projects"
-        title="Research, experimentation, and real-world robotics applications."
-        text="Use cards for labs, initiatives, events, research streams, and demos. The hover motion and glow effects keep the page feeling dynamic without becoming noisy."
+        eyebrow="Events & Workshops"
+        title="Bringing African robotics researchers and builders together."
+        text="From Deep Learning Indaba workshops to IEEE satellite events, AARC has been fostering robotics collaboration and knowledge-sharing across the continent. View some of our recent projects below."
       />
 
-      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3 items-stretch">
-        <div class="reveal">
-          <ProjectCard
-            title="Workshop on Robotics at the Deep Learning Indaba 2023"
-            text="Learn more about robotics at the Deep Learning Indaba 2023."
-            tags={["Workshops", "Education", "AI"]}
-            buttonUrl="https://sites.google.com/view/robotlearning4africa"
-          />
+      <div class="relative mt-12">
+        <!-- prev/next buttons -->
+        <button
+          id="carousel-prev"
+          aria-label="Previous"
+          class="absolute -left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button
+          id="carousel-next"
+          aria-label="Next"
+          class="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- scroll track -->
+        <div
+          id="carousel-track"
+          class="flex gap-6 overflow-x-auto pb-4 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+            <ProjectCard
+              title="Workshop on Robotics at the Deep Learning Indaba 2023"
+              text="Learn more about robotics at the Deep Learning Indaba 2023."
+              tags={["Workshops", "Education", "AI"]}
+              buttonUrl="https://sites.google.com/view/robotlearning4africa"
+            />
+          </div>
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+            <ProjectCard
+              title="2nd Workshop on Robotics at the Deep Learning Indaba 2024"
+              text="Learn more about the 2nd workshop on robotics at the Deep Learning Indaba 2024."
+              tags={["Workshops", "Robotics", "Deep Learning"]}
+              buttonUrl="https://sites.google.com/view/robotlearning4africa-2024"
+            />
+          </div>
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+            <ProjectCard
+              title="ICRA@40 - Africa, Satellite Event"
+              text="Look back on the IEEE ICRA@40 satellite event, hosted at Wits University in 2024."
+              tags={["Events", "ICRA", "Africa"]}
+              buttonUrl="https://icra40.ieee.org/icra-2024/icra40-africa/"
+            />
+          </div>
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+            <ProjectCard
+              title="3rd Workshop on Robotics at the Deep Learning Indaba 2025"
+              text="Learn more about the 3rd workshop on robotics at the Deep Learning Indaba 2025."
+              tags={["Workshops", "Future", "Innovation"]}
+              buttonUrl="https://sites.google.com/view/robot-learning-for-africa-2025/home"
+            />
+          </div>
         </div>
-        <div class="reveal">
-          <ProjectCard
-            title="2nd Workshop on Robotics at the Deep Learning Indaba 2024"
-            text="Learn more about the 2nd workshop on robotics at the Deep Learning Indaba 2024."
-            tags={["Workshops", "Robotics", "Deep Learning"]}
-            buttonUrl="https://sites.google.com/view/robotlearning4africa-2024"
-          />
-        </div>
-        <div class="reveal">
-          <ProjectCard
-            title="ICRA@40 - Africa, Satellite Event"
-            text="Look back on the IEEE ICRA@40 satellite event, hosted at Wits University in 2024."
-            tags={["Events", "ICRA", "Africa"]}
-            buttonUrl="https://icra40.ieee.org/icra-2024/icra40-africa/"
-          />
-        </div>
-        <div class="reveal">
-          <ProjectCard
-            title="3rd Workshop on Robotics at the Deep Learning Indaba 2025"
-            text="Learn more about the 3rd workshop on robotics at the Deep Learning Indaba 2025."
-            tags={["Workshops", "Future", "Innovation"]}
-            buttonUrl="https://sites.google.com/view/robot-learning-for-africa-2025/home"
-          />
-        </div>
+
+        <!-- dot indicators -->
+        <div id="carousel-dots" class="mt-6 flex justify-center gap-2"></div>
       </div>
+
+      <script>
+        const track = document.getElementById("carousel-track") as HTMLElement;
+        const dotsContainer = document.getElementById("carousel-dots") as HTMLElement;
+        const cards = Array.from(track.children) as HTMLElement[];
+
+        // build dots
+        cards.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.className = "h-2 w-2 rounded-full bg-white/20 transition-colors";
+          dot.setAttribute("aria-label", `Go to card ${i + 1}`);
+          dot.addEventListener("click", () => scrollTo(i));
+          dotsContainer.appendChild(dot);
+        });
+
+        function getVisibleCount() {
+          if (window.innerWidth >= 1024) return 3;
+          if (window.innerWidth >= 640) return 1;
+          return 1;
+        }
+
+        function scrollTo(index: number) {
+          const card = cards[index];
+          track.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+        }
+
+        function updateDots() {
+          const dots = Array.from(dotsContainer.children) as HTMLElement[];
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let active = 0;
+          cards.forEach((card, i) => {
+            if (card.offsetLeft <= center) active = i;
+          });
+          dots.forEach((d, i) => {
+            d.className = `h-2 rounded-full transition-all ${i === active ? "w-6 bg-orange-400" : "w-2 bg-white/20"}`;
+          });
+        }
+
+        document.getElementById("carousel-prev")?.addEventListener("click", () => {
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let active = 0;
+          cards.forEach((card, i) => { if (card.offsetLeft <= center) active = i; });
+          scrollTo(Math.max(0, active - getVisibleCount()));
+        });
+
+        document.getElementById("carousel-next")?.addEventListener("click", () => {
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let active = 0;
+          cards.forEach((card, i) => { if (card.offsetLeft <= center) active = i; });
+          scrollTo(Math.min(cards.length - 1, active + getVisibleCount()));
+        });
+
+        track.addEventListener("scroll", updateDots, { passive: true });
+        updateDots();
+      </script>
     </section>
 
     <section id="network" class="relative overflow-hidden py-24">
@@ -109,8 +208,8 @@ import ProjectCard from "../components/ProjectCard.astro";
         <div class="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <SectionHeading
             eyebrow="African Innovation Network"
-            title="A connected continental identity."
-            text="This section draws from the Africa silhouette in the logo. It can evolve into an interactive map of chapters, labs, universities, robotics groups, and events."
+            title="Robotics is growing across the continent."
+            text="From universities and research labs to startups and innovation hubs, African roboticists are doing world-class work. AARC exists to connect these communities, bridge gaps in access and visibility, and build a shared foundation for the continent's intelligent systems future."
           />
 
           <div class="reveal relative">
@@ -135,6 +234,103 @@ import ProjectCard from "../components/ProjectCard.astro";
       </div>
     </section>
 
+    <section id="committee" class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <SectionHeading
+        eyebrow="Organising Committee"
+        title="The people driving AARC forward."
+        text="A team of researchers, engineers, and community builders working across Africa and beyond to grow the robotics ecosystem."
+      />
+
+      <div class="relative mt-12">
+        <button
+          id="committee-prev"
+          aria-label="Previous"
+          class="absolute -left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button
+          id="committee-next"
+          aria-label="Next"
+          class="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <div
+          id="committee-track"
+          class="flex gap-5 overflow-x-auto pb-4 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {[
+            { name: "Ndivhuwo Makondo",   role: "General Chair",              affiliation: "IBM Research Africa · Wits University",  image: "/images/people/ndivhuwo.png" },
+            { name: "Jenalea Rajab",       role: "Treasurer",                  affiliation: "AI Research Scientist & CTO",              image: "/images/people/jenalea.png" },
+            { name: "Sicelukwanda Zwane",  role: "Events Chair",               affiliation: "Kinisi Robotics · UCL",                    image: "/images/people/sicelukwanda.png" },
+            { name: "Alexandra Barry",     role: "Outreach Chair",             affiliation: "RAIL Lab, Wits University",                image: "/images/people/alexandra.png" },
+            { name: "Geraud Nangue Tasse", role: "Industry Partnerships Chair", affiliation: "RAIL Lab, Wits University",               image: "/images/people/geraud.png" },
+            { name: "Tamlin Love",         role: "Academic Partnerships Chair", affiliation: "IRI, CSIC-UPC",                           image: "/images/people/tamlin.jpg" },
+            { name: "Zukisa Mbuli",        role: "Publicity Chair",            affiliation: "Wits University",                          image: "/images/people/zukisa.png" },
+          ].map((member) => (
+            <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+              <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center transition-all hover:border-orange-400/20">
+                <div class="h-20 w-20 overflow-hidden rounded-full border-2 border-orange-400/25 ring-2 ring-orange-400/10">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="mt-4 text-sm font-semibold text-white">{member.name}</div>
+                <div class="mt-1 text-xs font-medium text-orange-300/90">{member.role}</div>
+                <div class="mt-2 text-xs leading-5 text-slate-400">{member.affiliation}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div id="committee-dots" class="mt-6 flex justify-center gap-2"></div>
+      </div>
+
+      <script>
+        const ct = document.getElementById("committee-track") as HTMLElement;
+        const cd = document.getElementById("committee-dots") as HTMLElement;
+        const cc = Array.from(ct.children) as HTMLElement[];
+
+        cc.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.setAttribute("aria-label", `Go to member ${i + 1}`);
+          dot.className = "h-2 w-2 rounded-full bg-white/20 transition-colors";
+          dot.addEventListener("click", () => ct.scrollTo({ left: cc[i].offsetLeft, behavior: "smooth" }));
+          cd.appendChild(dot);
+        });
+
+        function activeIndex() {
+          const mid = ct.scrollLeft + ct.clientWidth / 2;
+          let idx = 0;
+          cc.forEach((c, i) => { if (c.offsetLeft <= mid) idx = i; });
+          return idx;
+        }
+
+        function syncDots() {
+          const a = activeIndex();
+          Array.from(cd.children).forEach((d, i) => {
+            (d as HTMLElement).className = `h-2 rounded-full transition-all ${i === a ? "w-6 bg-orange-400" : "w-2 bg-white/20"}`;
+          });
+        }
+
+        function visCount() { return window.innerWidth >= 1024 ? 5 : window.innerWidth >= 640 ? 2 : 1; }
+
+        document.getElementById("committee-prev")?.addEventListener("click", () => {
+          ct.scrollTo({ left: cc[Math.max(0, activeIndex() - visCount())].offsetLeft, behavior: "smooth" });
+        });
+        document.getElementById("committee-next")?.addEventListener("click", () => {
+          ct.scrollTo({ left: cc[Math.min(cc.length - 1, activeIndex() + visCount())].offsetLeft, behavior: "smooth" });
+        });
+
+        ct.addEventListener("scroll", syncDots, { passive: true });
+        syncDots();
+      </script>
+    </section>
+
     <section id="join" class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <div class="reveal panel orange-glow rounded-[2rem] p-8 md:p-12">
         <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -152,8 +348,8 @@ import ProjectCard from "../components/ProjectCard.astro";
           </div>
 
           <div class="flex flex-wrap gap-4 lg:justify-end">
-            <a href="#" class="primary-btn">Apply to Join</a>
-            <a href="#" class="secondary-btn">View Community Charter</a>
+            <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="primary-btn">Join our Discord</a>
+            <a href="/charter" class="secondary-btn">View Community Charter</a>
           </div>
         </div>
       </div>
