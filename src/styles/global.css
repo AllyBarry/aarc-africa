@@ -29,7 +29,9 @@ body {
 @font-face {
   font-family: "Nasalization";
   src: url("/fonts/nasalization-rg.otf") format("truetype");
-  font-weight: normal;
+  /* Allow tailwind weight utilities (font-thin, font-light, etc.) to apply to this font.
+     If the font file doesn’t include multiple weights, browsers will simulate the weight. */
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
