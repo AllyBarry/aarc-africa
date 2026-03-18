@@ -15,6 +15,9 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci && npm run build
+      - name: List contents of dist directory
+        run: |
+          ls -R dist
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
