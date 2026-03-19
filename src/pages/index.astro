@@ -25,53 +25,101 @@ import ProjectCard from "../components/ProjectCard.astro";
 
           <!-- Coming soon items -->
           <div class="reveal mt-10 space-y-4">
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Coming soon</p>
-            {[
-              { label: "Annual Robotics Workshop",    note: "Returning in 2026 at the Deep Learning Indaba" },
-              { label: "African Robotics Summer School", note: "A multi-day intensive — currently in planning" },
-              { label: "Outreach &amp; School Programs",  note: "Bringing robotics to the next generation" },
-             ].map(item => (
-              <div class="flex items-start gap-4 rounded-2xl border border-white/6 bg-white/3 px-5 py-4">
-                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400/60"></span>
-                <div>
-                  <div class="text-sm font-semibold text-white" set:html={item.label} />
-                  <div class="mt-0.5 text-sm text-slate-400">{item.note}</div>
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500"
+            >
+              Coming soon
+            </p>
+            {
+              [
+                {
+                  label: "Annual Robotics Workshop",
+                  note: "Returning in 2026 at the Deep Learning Indaba",
+                },
+                {
+                  label: "African Robotics Summer School",
+                  note: "A multi-day intensive — currently in planning",
+                },
+                {
+                  label: "Outreach &amp; School Programs",
+                  note: "Bringing robotics to the next generation",
+                },
+              ].map((item) => (
+                <div class="flex items-start gap-4 rounded-2xl border border-white/6 bg-white/3 px-5 py-4">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400/60" />
+                  <div>
+                    <div
+                      class="text-sm font-semibold text-white"
+                      set:html={item.label}
+                    />
+                    <div class="mt-0.5 text-sm text-slate-400">{item.note}</div>
+                  </div>
+                  <span class="ml-auto shrink-0 rounded-full border border-amber-400/25 bg-amber-400/10 px-2.5 py-0.5 text-xs text-amber-300">
+                    Soon
+                  </span>
                 </div>
-                <span class="ml-auto shrink-0 rounded-full border border-amber-400/25 bg-amber-400/10 px-2.5 py-0.5 text-xs text-amber-300">Soon</span>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
 
         <!-- Stats panel -->
         <div class="reveal relative">
           <div class="panel rounded-[2rem] p-8">
-            <p class="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">By the numbers</p>
+            <p
+              class="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500"
+            >
+              By the numbers
+            </p>
             <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+              <div
+                class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center"
+              >
                 <div class="text-3xl font-bold text-orange-300">21+</div>
-                <div class="mt-2 text-sm text-slate-400">Countries represented</div>
+                <div class="mt-2 text-sm text-slate-400">
+                  Countries represented
+                </div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-                <div class="text-3xl font-bold text-orange-300">50+</div>
-                <div class="mt-2 text-sm text-slate-400">Workshop attendees</div>
+              <div
+                class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center"
+              >
+                <div class="text-3xl font-bold text-orange-300">1</div>
+                <div class="mt-2 text-sm text-slate-400">Conference</div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+              <div
+                class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center"
+              >
                 <div class="text-3xl font-bold text-orange-300">3</div>
-                <div class="mt-2 text-sm text-slate-400">Annual workshops held</div>
+                <div class="mt-2 text-sm text-slate-400">
+                  Annual workshops held
+                </div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-                <div class="text-3xl font-bold text-orange-300">Pan&#8209;African</div>
-                <div class="mt-2 text-sm text-slate-400">Partner labs &amp; institutions</div>
+              <div
+                class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center"
+              >
+                <div class="text-xl font-bold text-orange-300 leading-tight">
+                  Pan-African
+                </div>
+                <div class="mt-2 text-sm text-slate-400">
+                  Partner labs &amp; institutions
+                </div>
               </div>
             </div>
 
-            <div class="mt-6 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-5 text-sm leading-7 text-slate-300">
-              Our community is growing. Join the Discord to stay informed about upcoming workshops,
-              the summer school, and outreach opportunities as they are announced.
+            <div
+              class="mt-6 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-5 text-sm leading-7 text-slate-300"
+            >
+              Our community is growing. Join the Discord to stay informed about
+              upcoming workshops, the summer school, and outreach opportunities
+              as they are announced.
             </div>
 
-            <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="primary-btn mt-6 w-full justify-center">
+            <a
+              href="https://discord.gg/pvXMR8vcpV"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="primary-btn mt-6 w-full justify-center"
+            >
               Join the community
             </a>
           </div>
@@ -93,14 +141,36 @@ import ProjectCard from "../components/ProjectCard.astro";
           aria-label="Previous"
           class="absolute -left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path></svg
+          >
         </button>
         <button
           id="carousel-next"
           aria-label="Next"
           class="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path></svg
+          >
         </button>
 
         <!-- scroll track -->
@@ -108,23 +178,19 @@ import ProjectCard from "../components/ProjectCard.astro";
           id="carousel-track"
           class="flex gap-6 overflow-x-auto pb-4 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
-          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+          <div
+            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
+          >
             <ProjectCard
-              title="Workshop on Robotics at the Deep Learning Indaba 2023"
-              text="Learn more about robotics at the Deep Learning Indaba 2023."
-              tags={["Workshops", "Education", "AI"]}
-              buttonUrl="https://sites.google.com/view/robotlearning4africa"
+              title="3rd Workshop on Robotics at the Deep Learning Indaba 2025"
+              text="Learn more about the 3rd workshop on robotics at the Deep Learning Indaba 2025."
+              tags={["Workshops", "Future", "Innovation"]}
+              buttonUrl="https://sites.google.com/view/robot-learning-for-africa-2025/home"
             />
           </div>
-          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
-            <ProjectCard
-              title="2nd Workshop on Robotics at the Deep Learning Indaba 2024"
-              text="Learn more about the 2nd workshop on robotics at the Deep Learning Indaba 2024."
-              tags={["Workshops", "Robotics", "Deep Learning"]}
-              buttonUrl="https://sites.google.com/view/robotlearning4africa-2024"
-            />
-          </div>
-          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+          <div
+            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
+          >
             <ProjectCard
               title="ICRA@40 - Africa, Satellite Event"
               text="Look back on the IEEE ICRA@40 satellite event, hosted at Wits University in 2024."
@@ -132,12 +198,24 @@ import ProjectCard from "../components/ProjectCard.astro";
               buttonUrl="https://icra40.ieee.org/icra-2024/icra40-africa/"
             />
           </div>
-          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+          <div
+            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
+          >
             <ProjectCard
-              title="3rd Workshop on Robotics at the Deep Learning Indaba 2025"
-              text="Learn more about the 3rd workshop on robotics at the Deep Learning Indaba 2025."
-              tags={["Workshops", "Future", "Innovation"]}
-              buttonUrl="https://sites.google.com/view/robot-learning-for-africa-2025/home"
+              title="2nd Workshop on Robotics at the Deep Learning Indaba 2024"
+              text="Learn more about the 2nd workshop on robotics at the Deep Learning Indaba 2024."
+              tags={["Workshops", "Robotics", "Deep Learning"]}
+              buttonUrl="https://sites.google.com/view/robotlearning4africa-2024"
+            />
+          </div>
+          <div
+            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
+          >
+            <ProjectCard
+              title="Workshop on Robotics at the Deep Learning Indaba 2023"
+              text="Learn more about robotics at the Deep Learning Indaba 2023."
+              tags={["Workshops", "Education", "AI"]}
+              buttonUrl="https://sites.google.com/view/robotlearning4africa"
             />
           </div>
         </div>
@@ -148,7 +226,9 @@ import ProjectCard from "../components/ProjectCard.astro";
 
       <script>
         const track = document.getElementById("carousel-track") as HTMLElement;
-        const dotsContainer = document.getElementById("carousel-dots") as HTMLElement;
+        const dotsContainer = document.getElementById(
+          "carousel-dots",
+        ) as HTMLElement;
         const cards = Array.from(track.children) as HTMLElement[];
 
         // build dots
@@ -183,19 +263,27 @@ import ProjectCard from "../components/ProjectCard.astro";
           });
         }
 
-        document.getElementById("carousel-prev")?.addEventListener("click", () => {
-          const center = track.scrollLeft + track.clientWidth / 2;
-          let active = 0;
-          cards.forEach((card, i) => { if (card.offsetLeft <= center) active = i; });
-          scrollTo(Math.max(0, active - getVisibleCount()));
-        });
+        document
+          .getElementById("carousel-prev")
+          ?.addEventListener("click", () => {
+            const center = track.scrollLeft + track.clientWidth / 2;
+            let active = 0;
+            cards.forEach((card, i) => {
+              if (card.offsetLeft <= center) active = i;
+            });
+            scrollTo(Math.max(0, active - getVisibleCount()));
+          });
 
-        document.getElementById("carousel-next")?.addEventListener("click", () => {
-          const center = track.scrollLeft + track.clientWidth / 2;
-          let active = 0;
-          cards.forEach((card, i) => { if (card.offsetLeft <= center) active = i; });
-          scrollTo(Math.min(cards.length - 1, active + getVisibleCount()));
-        });
+        document
+          .getElementById("carousel-next")
+          ?.addEventListener("click", () => {
+            const center = track.scrollLeft + track.clientWidth / 2;
+            let active = 0;
+            cards.forEach((card, i) => {
+              if (card.offsetLeft <= center) active = i;
+            });
+            scrollTo(Math.min(cards.length - 1, active + getVisibleCount()));
+          });
 
         track.addEventListener("scroll", updateDots, { passive: true });
         updateDots();
@@ -203,7 +291,10 @@ import ProjectCard from "../components/ProjectCard.astro";
     </section>
 
     <section id="network" class="relative overflow-hidden py-24">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,122,26,0.08),transparent_42%)]"></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,122,26,0.08),transparent_42%)]"
+      >
+      </div>
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <SectionHeading
@@ -214,19 +305,44 @@ import ProjectCard from "../components/ProjectCard.astro";
 
           <div class="reveal relative">
             <div class="panel relative min-h-[420px] rounded-[2rem] p-6">
-              <div class="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_30%_20%,rgba(255,179,71,0.12),transparent_25%),radial-gradient(circle_at_70%_80%,rgba(0,194,255,0.08),transparent_25%)]"></div>
+              <div
+                class="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_30%_20%,rgba(255,179,71,0.12),transparent_25%),radial-gradient(circle_at_70%_80%,rgba(0,194,255,0.08),transparent_25%)]"
+              >
+              </div>
 
-              <div class="absolute inset-6 rounded-[1.5rem] border border-white/10 bg-[#0c131b]">
-                <div class="absolute inset-0 bg-center bg-contain bg-no-repeat opacity-20"></div>
+              <div
+                class="absolute inset-6 rounded-[1.5rem] border border-white/10 bg-[#0c131b]"
+              >
+                <div
+                  class="absolute inset-0 bg-center bg-contain bg-no-repeat opacity-20"
+                >
+                </div>
 
-                <span class="absolute left-[28%] top-[32%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"></span>
-                <span class="absolute left-[47%] top-[44%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"></span>
-                <span class="absolute left-[55%] top-[58%] h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(0,194,255,0.8)]"></span>
-                <span class="absolute left-[64%] top-[40%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"></span>
+                <span
+                  class="absolute left-[28%] top-[32%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"
+                ></span>
+                <span
+                  class="absolute left-[47%] top-[44%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"
+                ></span>
+                <span
+                  class="absolute left-[55%] top-[58%] h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(0,194,255,0.8)]"
+                ></span>
+                <span
+                  class="absolute left-[64%] top-[40%] h-3 w-3 rounded-full bg-orange-300 shadow-[0_0_18px_rgba(255,122,26,0.9)]"
+                ></span>
 
-                <div class="glow-line absolute left-[29%] top-[33%] h-[2px] w-[20%] rotate-[18deg]"></div>
-                <div class="glow-line absolute left-[47%] top-[45%] h-[2px] w-[14%] rotate-[36deg]"></div>
-                <div class="glow-line absolute left-[50%] top-[47%] h-[2px] w-[18%] -rotate-[12deg]"></div>
+                <div
+                  class="glow-line absolute left-[29%] top-[33%] h-[2px] w-[20%] rotate-[18deg]"
+                >
+                </div>
+                <div
+                  class="glow-line absolute left-[47%] top-[45%] h-[2px] w-[14%] rotate-[36deg]"
+                >
+                </div>
+                <div
+                  class="glow-line absolute left-[50%] top-[47%] h-[2px] w-[18%] -rotate-[12deg]"
+                >
+                </div>
               </div>
             </div>
           </div>
@@ -247,44 +363,109 @@ import ProjectCard from "../components/ProjectCard.astro";
           aria-label="Previous"
           class="absolute -left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path></svg
+          >
         </button>
         <button
           id="committee-next"
           aria-label="Next"
           class="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path></svg
+          >
         </button>
 
         <div
           id="committee-track"
           class="flex gap-5 overflow-x-auto pb-4 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
-          {[
-            { name: "Ndivhuwo Makondo",   role: "General Chair",              affiliation: "IBM Research Africa · Wits University",  image: "/images/people/ndivhuwo.png" },
-            { name: "Jenalea Rajab",       role: "Treasurer",                  affiliation: "AI Research Scientist & CTO",              image: "/images/people/jenalea.png" },
-            { name: "Sicelukwanda Zwane",  role: "Events Chair",               affiliation: "Kinisi Robotics · UCL",                    image: "/images/people/sicelukwanda.png" },
-            { name: "Alexandra Barry",     role: "Outreach Chair",             affiliation: "RAIL Lab, Wits University",                image: "/images/people/alexandra.png" },
-            { name: "Geraud Nangue Tasse", role: "Industry Partnerships Chair", affiliation: "RAIL Lab, Wits University",               image: "/images/people/geraud.png" },
-            { name: "Tamlin Love",         role: "Academic Partnerships Chair", affiliation: "IRI, CSIC-UPC",                           image: "/images/people/tamlin.jpg" },
-            { name: "Zukisa Mbuli",        role: "Publicity Chair",            affiliation: "Wits University",                          image: "/images/people/zukisa.png" },
-          ].map((member) => (
-            <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
-              <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center transition-all hover:border-orange-400/20">
-                <div class="h-20 w-20 overflow-hidden rounded-full border-2 border-orange-400/25 ring-2 ring-orange-400/10">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    class="h-full w-full object-cover"
-                  />
+          {
+            [
+              {
+                name: "Ndivhuwo Makondo",
+                role: "General Chair",
+                affiliation: "IBM Research Africa · Wits University",
+                image: "/images/people/ndivhuwo.png",
+              },
+              {
+                name: "Jenalea Rajab",
+                role: "Treasurer",
+                affiliation: "AI Research Scientist & CTO",
+                image: "/images/people/jenalea.png",
+              },
+              {
+                name: "Sicelukwanda Zwane",
+                role: "Events Chair",
+                affiliation: "Kinisi Robotics · UCL",
+                image: "/images/people/sicelukwanda.png",
+              },
+              {
+                name: "Alexandra Barry",
+                role: "Outreach Chair",
+                affiliation: "RAIL Lab, Wits University",
+                image: "/images/people/alexandra.png",
+              },
+              {
+                name: "Geraud Nangue Tasse",
+                role: "Industry Partnerships Chair",
+                affiliation: "RAIL Lab, Wits University",
+                image: "/images/people/geraud.png",
+              },
+              {
+                name: "Tamlin Love",
+                role: "Academic Partnerships Chair",
+                affiliation: "IRI, CSIC-UPC",
+                image: "/images/people/tamlin.jpg",
+              },
+              {
+                name: "Zukisa Mbuli",
+                role: "Publicity Chair",
+                affiliation: "RAIL Lab, Wits University",
+                image: "/images/people/zukisa.png",
+              },
+            ].map((member) => (
+              <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+                <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center transition-all hover:border-orange-400/20">
+                  <div class="h-20 w-20 overflow-hidden rounded-full border-2 border-orange-400/25 ring-2 ring-orange-400/10">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div class="mt-4 text-sm font-semibold text-white">
+                    {member.name}
+                  </div>
+                  <div class="mt-1 text-xs font-medium text-orange-300/90">
+                    {member.role}
+                  </div>
+                  <div class="mt-2 text-xs leading-5 text-slate-400">
+                    {member.affiliation}
+                  </div>
                 </div>
-                <div class="mt-4 text-sm font-semibold text-white">{member.name}</div>
-                <div class="mt-1 text-xs font-medium text-orange-300/90">{member.role}</div>
-                <div class="mt-2 text-xs leading-5 text-slate-400">{member.affiliation}</div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         <div id="committee-dots" class="mt-6 flex justify-center gap-2"></div>
@@ -299,32 +480,54 @@ import ProjectCard from "../components/ProjectCard.astro";
           const dot = document.createElement("button");
           dot.setAttribute("aria-label", `Go to member ${i + 1}`);
           dot.className = "h-2 w-2 rounded-full bg-white/20 transition-colors";
-          dot.addEventListener("click", () => ct.scrollTo({ left: cc[i].offsetLeft, behavior: "smooth" }));
+          dot.addEventListener("click", () =>
+            ct.scrollTo({ left: cc[i].offsetLeft, behavior: "smooth" }),
+          );
           cd.appendChild(dot);
         });
 
         function activeIndex() {
           const mid = ct.scrollLeft + ct.clientWidth / 2;
           let idx = 0;
-          cc.forEach((c, i) => { if (c.offsetLeft <= mid) idx = i; });
+          cc.forEach((c, i) => {
+            if (c.offsetLeft <= mid) idx = i;
+          });
           return idx;
         }
 
         function syncDots() {
           const a = activeIndex();
           Array.from(cd.children).forEach((d, i) => {
-            (d as HTMLElement).className = `h-2 rounded-full transition-all ${i === a ? "w-6 bg-orange-400" : "w-2 bg-white/20"}`;
+            (d as HTMLElement).className =
+              `h-2 rounded-full transition-all ${i === a ? "w-6 bg-orange-400" : "w-2 bg-white/20"}`;
           });
         }
 
-        function visCount() { return window.innerWidth >= 1024 ? 5 : window.innerWidth >= 640 ? 2 : 1; }
+        function visCount() {
+          return window.innerWidth >= 1024
+            ? 5
+            : window.innerWidth >= 640
+              ? 2
+              : 1;
+        }
 
-        document.getElementById("committee-prev")?.addEventListener("click", () => {
-          ct.scrollTo({ left: cc[Math.max(0, activeIndex() - visCount())].offsetLeft, behavior: "smooth" });
-        });
-        document.getElementById("committee-next")?.addEventListener("click", () => {
-          ct.scrollTo({ left: cc[Math.min(cc.length - 1, activeIndex() + visCount())].offsetLeft, behavior: "smooth" });
-        });
+        document
+          .getElementById("committee-prev")
+          ?.addEventListener("click", () => {
+            ct.scrollTo({
+              left: cc[Math.max(0, activeIndex() - visCount())].offsetLeft,
+              behavior: "smooth",
+            });
+          });
+        document
+          .getElementById("committee-next")
+          ?.addEventListener("click", () => {
+            ct.scrollTo({
+              left: cc[Math.min(cc.length - 1, activeIndex() + visCount())]
+                .offsetLeft,
+              behavior: "smooth",
+            });
+          });
 
         ct.addEventListener("scroll", syncDots, { passive: true });
         syncDots();
@@ -335,25 +538,45 @@ import ProjectCard from "../components/ProjectCard.astro";
       <div class="reveal panel orange-glow rounded-[2rem] p-8 md:p-12">
         <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90"
+            >
               Join the movement
             </p>
             <h2 class="mt-3 text-3xl font-bold text-white md:text-5xl">
               Be part of the African robotics community.
             </h2>
             <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-              Join our Discord to connect with researchers, students, and engineers across the continent — and stay in the loop on events and opportunities.
+              Join our Discord to connect with researchers, students, and
+              engineers across the continent — and stay in the loop on events
+              and opportunities.
             </p>
           </div>
 
           <div class="flex flex-col gap-4 lg:items-end">
-            <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="primary-btn w-full justify-center lg:w-auto">
-              <svg class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+            <a
+              href="https://discord.gg/pvXMR8vcpV"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="primary-btn w-full justify-center lg:w-auto"
+            >
+              <svg
+                class="mr-2 h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"
+                ></path>
               </svg>
               Join our Discord
             </a>
-            <a href="/charter" class="secondary-btn w-full justify-center lg:w-auto">View Community Charter</a>
+            <a
+              href="/charter"
+              class="secondary-btn w-full justify-center lg:w-auto"
+              >View Community Charter</a
+            >
           </div>
         </div>
       </div>
@@ -361,7 +584,9 @@ import ProjectCard from "../components/ProjectCard.astro";
   </main>
 
   <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-500">
-    <div class="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between"
+    >
       <p>© 2026 Akili African Robotics Community</p>
       <p>Robotics • AI • Research • Africa</p>
     </div>
