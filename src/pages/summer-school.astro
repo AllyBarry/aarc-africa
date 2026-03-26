@@ -1,0 +1,337 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<BaseLayout
+  title="Summer School — AARC"
+  description="The AARC Summer School on Robotics and Automation in Africa — promoting robotics education and research across the continent."
+>
+  <Navbar />
+
+  <main class="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+
+    <!-- Header -->
+    <div class="reveal mb-16">
+      <a href="/" class="mb-8 inline-flex items-center gap-2 text-sm text-slate-400 hover:text-orange-300 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to home
+      </a>
+      <p class="mb-6 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Summer School 2027</p>
+      <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight"><span class="nasal-title">AARC</span> Summer School</h1>
+      <p class="mb-8 text-2xl md:text-4xl font-semibold text-slate-300 leading-snug">on Robotics &amp; Automation in Africa</p>
+      <p class="max-w-2xl text-lg leading-8 text-slate-400">
+        An initiative to promote robotics education and research in South Africa and across the continent —
+        filling a critical gap for early-stage robotics researchers.
+      </p>
+    </div>
+
+    <!-- About -->
+    <div class="reveal panel rounded-3xl p-8 mb-10">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">About</p>
+      <h2 class="mt-2 text-2xl font-bold text-white">Why this Summer School?</h2>
+      <p class="mt-4 leading-8 text-slate-300">
+        The field of robotics is steadily growing in South Africa, which is home to some of the largest
+        robotics and machine learning labs in Africa. Despite this, there are currently no active summer
+        schools aimed at early-stage robotics researchers. The AARC Summer School is poised to fill this
+        important gap — bringing together graduate students, researchers, and practitioners for an intensive
+        programme of keynotes, tutorials, and hands-on sessions.
+      </p>
+      <p class="mt-4 leading-8 text-slate-300">
+        The school will take place in <strong class="text-white">August/September 2027</strong>. We aim to
+        co-locate with the <strong class="text-white">Deep Learning Indaba</strong>, with whom the organising
+        committee has an existing relationship and which is expected to take place in South Africa next year.
+        By co-locating with the largest ongoing machine learning and AI conference in Africa, we hope to
+        expand the reach of our school to include participants from across the continent — promoting robotics
+        education and building a research community on a much larger scale.
+      </p>
+      <div class="mt-6 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-5">
+        <p class="mb-3 text-sm font-semibold text-orange-200">At a Glance</p>
+        <ul class="space-y-2 text-sm leading-7 text-slate-300">
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">When:</strong>&nbsp;August/September 2027 (exact dates TBC)</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Where:</strong>&nbsp;South Africa (co-located with the Deep Learning Indaba)</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Duration:</strong>&nbsp;3 days</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Target Audience:</strong>&nbsp;Graduate students (Masters &amp; PhD) with a background in ML/AI</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Themes & Topics -->
+    <div class="reveal mb-4">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Themes &amp; Topics</p>
+      <h2 class="text-3xl font-bold text-white">What we'll cover</h2>
+      <p class="mt-4 leading-8 text-slate-400">
+        Explore a range of cutting-edge topics across robotics and automation. The summer school spans five
+        core themes relevant to the African robotics landscape.
+      </p>
+    </div>
+
+    <div class="reveal panel rounded-3xl p-8 mb-10">
+      <div class="flex flex-wrap gap-2">
+        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Reinforcement Learning</span>
+        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Imitation Learning</span>
+        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Sim-to-Real Transfer</span>
+        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Foundation Models</span>
+        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Perception &amp; Representation</span>
+
+        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Task Planning</span>
+        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Motion Planning</span>
+        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Knowledge Representation</span>
+        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Cognitive Architectures</span>
+        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Decision-Making</span>
+        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Bio-Inspired Robotics</span>
+
+        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Human-Robot Interaction</span>
+        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Natural Language Interaction</span>
+        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Multi-Agent Coordination</span>
+        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Social Robotics</span>
+        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Shared Autonomy</span>
+        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Robot Safety &amp; Ethics</span>
+
+        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Robot Soccer</span>
+        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">RoboCup@Home</span>
+        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Service Robotics</span>
+        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Rescue Robotics</span>
+        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Simulation &amp; Benchmarking</span>
+
+        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Autonomous Navigation</span>
+        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Precision Agriculture</span>
+        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Crop Monitoring</span>
+        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Drone Sensing</span>
+        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Low-Cost Robotics</span>
+        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Harvesting Automation</span>
+      </div>
+      <p class="mt-6 text-sm leading-7 text-slate-400">
+        <strong class="text-white">Color codes:</strong>
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-orange-400"></span>Robot Learning</span>
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-blue-400"></span>Cognitive Robotics</span>
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Human-Robot Interaction</span>
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-violet-400"></span>RoboCup</span>
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-400"></span>Agricultural Robotics</span>
+      </p>
+    </div>
+
+    <!-- Programme Format -->
+    <div class="reveal panel rounded-3xl p-8 mb-10">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">Programme</p>
+      <h2 class="mt-2 text-2xl font-bold text-white">What to Expect</h2>
+      <p class="mt-4 leading-8 text-slate-300">
+        The three-day programme features a mix of formats designed to provide both breadth and depth across the
+        summer school themes.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+          <p class="text-sm font-semibold text-orange-200">8 Keynote Sessions</p>
+          <p class="mt-1 text-sm leading-6 text-slate-400">1-hour lectures by invited speakers (45 min talk + 15 min Q&amp;A)</p>
+        </div>
+        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+          <p class="text-sm font-semibold text-orange-200">4 Hands-on Sessions</p>
+          <p class="mt-1 text-sm leading-6 text-slate-400">Practical tutorials and workshops (1.5–2 hours each)</p>
+        </div>
+        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+          <p class="text-sm font-semibold text-orange-200">Panel Discussion</p>
+          <p class="mt-1 text-sm leading-6 text-slate-400">Perspectives on the future of robotics in Africa</p>
+        </div>
+        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+          <p class="text-sm font-semibold text-orange-200">Poster Session</p>
+          <p class="mt-1 text-sm leading-6 text-slate-400">Showcase your work and connect with peers</p>
+        </div>
+      </div>
+      <p class="mt-5 text-sm leading-7 text-slate-400">
+        Tutorials may cover introductory topics such as ROS, perception for robotics, and getting started with robot programming.
+      </p>
+    </div>
+
+    <!-- Tentative Schedule -->
+    <div class="reveal mb-4">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Tentative Schedule</p>
+      <h2 class="text-3xl font-bold text-white">Three-day agenda</h2>
+      <p class="mt-4 leading-8 text-slate-400">
+        Daily sessions run from 08:30 to 17:00. This schedule is tentative and subject to change.
+      </p>
+    </div>
+
+    <div class="reveal mb-10 overflow-x-auto">
+      <table class="w-full text-sm text-left text-slate-300 border-collapse">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="py-3 pr-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80 w-[140px]">Time</th>
+            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80">Day 1</th>
+            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80">Day 2</th>
+            <th class="py-3 pl-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80">Day 3</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/5">
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">08:30 – 09:00</td>
+            <td class="py-3 px-4">Registration</td>
+            <td class="py-3 px-4">Registration</td>
+            <td class="py-3 pl-4">Registration</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">09:00 – 10:00</td>
+            <td class="py-3 px-4">Welcome Session</td>
+            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 pl-4 text-orange-200/90">Keynote</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">10:00 – 10:30</td>
+            <td class="py-3 px-4 text-slate-500 italic">Coffee Break</td>
+            <td class="py-3 px-4 text-slate-500 italic">Coffee Break</td>
+            <td class="py-3 pl-4 text-slate-500 italic">Coffee Break</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">10:30 – 12:00</td>
+            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-cyan-300/80">Hands-on Session</td>
+            <td class="py-3 pl-4 text-emerald-300/80">Poster Session</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">12:00 – 13:00</td>
+            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 pl-4 text-orange-200/90">Keynote</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">13:00 – 14:00</td>
+            <td class="py-3 px-4 text-slate-500 italic">Lunch Break</td>
+            <td class="py-3 px-4 text-slate-500 italic">Lunch Break</td>
+            <td class="py-3 pl-4 text-slate-500 italic">Lunch Break</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">14:00 – 15:00</td>
+            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 pl-4 text-orange-200/90">Keynote</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">15:00 – 17:00</td>
+            <td class="py-3 px-4 text-cyan-300/80">Hands-on Session (2 hrs)</td>
+            <td class="py-3 px-4 text-violet-300/80">Panel Discussion</td>
+            <td class="py-3 pl-4 text-cyan-300/80">Hands-on Session</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">16:30 – 17:00</td>
+            <td class="py-3 px-4"></td>
+            <td class="py-3 px-4"></td>
+            <td class="py-3 pl-4 text-white font-semibold">Closing Session</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Potential Speakers -->
+    <div class="reveal mb-4">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Speakers</p>
+      <h2 class="text-3xl font-bold text-white">Potential Speakers</h2>
+      <p class="mt-4 leading-8 text-slate-400">
+        We are in the process of confirming speakers for the summer school. The following researchers
+        are among those being considered. Final speaker lineup will be announced closer to the event.
+      </p>
+    </div>
+
+    <div class="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+        <img src="https://cifar.ca/wp-content/uploads/2022/06/Benjamin-Rosman-.jpg" alt="Benjamin Rosman" class="h-20 w-20 rounded-full object-cover" />
+        <div>
+          <div class="text-base font-semibold text-white">Benjamin Rosman</div>
+          <div class="mt-2 text-xs font-semibold text-orange-300/70 uppercase tracking-wide">RL · Robotics</div>
+          <div class="mt-2 text-sm leading-6 text-slate-400">
+            Professor at the University of the Witwatersrand specializing in reinforcement learning, decision-making, and knowledge transfer across domains. Director of the RAIL Lab.
+          </div>
+        </div>
+      </div>
+
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+        <img src="https://www.raillab.org/author/pravesh-ranchod/avatar_hua31b2412db95e26580ae27fdabc849c6_1812768_270x270_fill_q75_lanczos_center.jpg" alt="Pravesh Ranchod" class="h-20 w-20 rounded-full object-cover" />
+        <div>
+          <div class="text-base font-semibold text-white">Pravesh Ranchod</div>
+          <div class="mt-2 text-xs font-semibold text-orange-300/70 uppercase tracking-wide">Robotics · HRI</div>
+          <div class="mt-2 text-sm leading-6 text-slate-400">
+            Professor at Witwatersrand and co-founder of RAIL Lab. Expert in reinforcement learning, skill discovery, and enabling robots to autonomously learn reusable behaviors.
+          </div>
+        </div>
+      </div>
+
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+        <img src="https://www.raillab.org/author/steven-james/avatar_hud4d5d3cadb472fb09d290f604ae02aa9_27870_270x270_fill_lanczos_center_3.png" alt="Steven James" class="h-20 w-20 rounded-full object-cover" />
+        <div>
+          <div class="text-base font-semibold text-white">Steven James</div>
+          <div class="mt-2 text-xs font-semibold text-orange-300/70 uppercase tracking-wide">AI · Robotics</div>
+          <div class="mt-2 text-sm leading-6 text-slate-400">
+            Senior Lecturer at Witwatersrand and RAIL Lab researcher. Focuses on reinforcement learning, task encoding, and developing intelligent agents that learn abstract representations.
+          </div>
+        </div>
+      </div>
+
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+        <img src="https://www.raillab.org/author/branden-ingram/avatar_hu9cdac0a1ebb0ff79c33cf7ccee12cb20_52277_270x270_fill_q75_lanczos_center.jpg" alt="Branden Ingram" class="h-20 w-20 rounded-full object-cover" />
+        <div>
+          <div class="text-base font-semibold text-white">Branden Ingram</div>
+          <div class="mt-2 text-xs font-semibold text-orange-300/70 uppercase tracking-wide">RoboCup · Robot Learning</div>
+          <div class="mt-2 text-sm leading-6 text-slate-400">
+            Lecturer at Witwatersrand and RAIL Lab member. Specializes in reinforcement learning, multi-agent systems, and RoboCup competition — developing AI strategies for simulated environments.
+          </div>
+        </div>
+      </div>
+
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+        <img src="https://images.squarespace-cdn.com/content/v1/6455de661f40b056133ed927/3fafd5ff-ea7f-41c8-b223-9a42bf8e95cc/image+%289%29.jpeg" alt="Dr Aisha Walcott Bryant" class="h-20 w-20 rounded-full object-cover" />
+        <div>
+          <div class="text-base font-semibold text-white">Dr Aisha Walcott Bryant</div>
+          <div class="mt-2 text-xs font-semibold text-orange-300/70 uppercase tracking-wide">Robot Learning</div>
+          <div class="mt-2 text-sm leading-6 text-slate-400">
+            Senior Researcher at Google Research Africa with a PhD in EECS from MIT in autonomous robotics. Develops AI-driven solutions for agriculture, food security, and social impact across Africa.
+          </div>
+        </div>
+      </div>
+
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+        <img src="https://africanroboticsunit.com/wp-content/uploads/2024/10/paulamayo.jpg" alt="Paul Amayo" class="h-20 w-20 rounded-full object-cover" />
+        <div>
+          <div class="text-base font-semibold text-white">Paul Amayo</div>
+          <div class="mt-2 text-xs font-semibold text-orange-300/70 uppercase tracking-wide">Low-Cost Robotics</div>
+          <div class="mt-2 text-sm leading-6 text-slate-400">
+            Senior Lecturer at the African Robotics Unit, University of Cape Town, and Visiting Researcher at Google Research Africa. Specializes in low-cost robotics solutions for the African context, with expertise in robotic mapping and optimization.
+          </div>
+        </div>
+      </div>
+
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+        <img src="https://benedictquartey.github.io/assets/images/profile.jpg" alt="Benedict Quartey" class="h-20 w-20 rounded-full object-cover" />
+        <div>
+          <div class="text-base font-semibold text-white">Benedict Quartey</div>
+          <div class="mt-2 text-xs font-semibold text-orange-300/70 uppercase tracking-wide">Robot Learning · HRI</div>
+          <div class="mt-2 text-sm leading-6 text-slate-400">
+            PhD candidate at Brown University's Intelligent Robot Lab. Researches instruction-following robots that learn from language and experience, with a focus on enabling general-purpose robot intelligence in unstructured environments.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal panel rounded-3xl p-8 mb-16">
+      <p class="text-sm leading-7 text-slate-400">
+        Additional keynote speakers and tutorial leads will be announced as the programme is finalised.
+        If you are interested in speaking or leading a session, please reach out via our Discord or email.
+      </p>
+    </div>
+
+    <!-- Closing CTA -->
+    <div class="reveal panel orange-glow rounded-[2rem] p-8 text-center">
+      <h2 class="text-2xl font-bold text-white">Interested in attending or contributing?</h2>
+      <p class="mt-3 text-slate-300">Join our community to stay updated on applications, speaker announcements, and more.</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="primary-btn">Join our Discord</a>
+        <a href="/" class="secondary-btn">Back to home</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-500">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <p>&copy; 2026 Akili African Robotics Community</p>
+      <p>Robotics &middot; AI &middot; Research &middot; Africa</p>
+    </div>
+  </footer>
+</BaseLayout>
