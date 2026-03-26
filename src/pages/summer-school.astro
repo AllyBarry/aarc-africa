@@ -1,15 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Navbar from "../components/Navbar.astro";
 ---
 
 <BaseLayout
   title="Summer School — AARC"
   description="The AARC Summer School on Robotics and Automation in Africa — promoting robotics education and research across the continent."
 >
-  <Navbar />
 
-  <main class="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+  <main class="mx-auto max-w-6xl px-6 pt-12 pb-24 lg:px-8">
 
     <!-- Header -->
     <div class="reveal mb-16">
@@ -29,7 +27,7 @@ import Navbar from "../components/Navbar.astro";
     <!-- About -->
     <div class="reveal panel rounded-3xl p-8 mb-10">
       <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">About</p>
-      <h2 class="mt-2 text-2xl font-bold text-white">Why this Summer School?</h2>
+      <h2 class="mt-2 text-2xl font-bold text-white">About the Initiative</h2>
       <p class="mt-4 leading-8 text-slate-300">
         The field of robotics is steadily growing in South Africa, which is home to some of the largest
         robotics and machine learning labs in Africa. Despite this, there are currently no active summer
@@ -49,172 +47,162 @@ import Navbar from "../components/Navbar.astro";
         <p class="mb-3 text-sm font-semibold text-orange-200">At a Glance</p>
         <ul class="space-y-2 text-sm leading-7 text-slate-300">
           <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">When:</strong>&nbsp;August/September 2027 (exact dates TBC)</li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Where:</strong>&nbsp;South Africa (co-located with the Deep Learning Indaba)</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Where:</strong>&nbsp;South Africa</li>
           <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Duration:</strong>&nbsp;3 days</li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Target Audience:</strong>&nbsp;Graduate students (Masters &amp; PhD) with a background in ML/AI</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Target Audience:</strong>&nbsp;Graduate studentsdo with a background in ML/AI</li>
         </ul>
       </div>
     </div>
 
-    <!-- Themes & Topics -->
+    <!-- Areas of Interest -->
     <div class="reveal mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Themes &amp; Topics</p>
-      <h2 class="text-3xl font-bold text-white">What we'll cover</h2>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Areas of Interest</p>
+      <h2 class="text-3xl font-bold text-white">What to expect</h2>
       <p class="mt-4 leading-8 text-slate-400">
-        Explore a range of cutting-edge topics across robotics and automation. The summer school spans five
-        core themes relevant to the African robotics landscape.
+        The summer school will cover foundational and cutting-edge areas in robotics and automation. Exact topics and session details will be confirmed as the programme is finalized.
       </p>
     </div>
 
     <div class="reveal panel rounded-3xl p-8 mb-10">
-      <div class="flex flex-wrap gap-2">
-        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Reinforcement Learning</span>
-        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Imitation Learning</span>
-        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Sim-to-Real Transfer</span>
-        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Foundation Models</span>
-        <span class="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-sm font-medium text-orange-200">Perception &amp; Representation</span>
-
-        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Task Planning</span>
-        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Motion Planning</span>
-        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Knowledge Representation</span>
-        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Cognitive Architectures</span>
-        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Decision-Making</span>
-        <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">Bio-Inspired Robotics</span>
-
-        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Human-Robot Interaction</span>
-        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Natural Language Interaction</span>
-        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Multi-Agent Coordination</span>
-        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Social Robotics</span>
-        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Shared Autonomy</span>
-        <span class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">Robot Safety &amp; Ethics</span>
-
-        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Robot Soccer</span>
-        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">RoboCup@Home</span>
-        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Service Robotics</span>
-        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Rescue Robotics</span>
-        <span class="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200">Simulation &amp; Benchmarking</span>
-
-        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Autonomous Navigation</span>
-        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Precision Agriculture</span>
-        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Crop Monitoring</span>
-        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Drone Sensing</span>
-        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Low-Cost Robotics</span>
-        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Harvesting Automation</span>
-      </div>
-      <p class="mt-6 text-sm leading-7 text-slate-400">
-        <strong class="text-white">Color codes:</strong>
-        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-orange-400"></span>Robot Learning</span>
-        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-blue-400"></span>Cognitive Robotics</span>
-        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Human-Robot Interaction</span>
-        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-violet-400"></span>RoboCup</span>
-        <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-400"></span>Agricultural Robotics</span>
-      </p>
-    </div>
-
-    <!-- Programme Format -->
-    <div class="reveal panel rounded-3xl p-8 mb-10">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">Programme</p>
-      <h2 class="mt-2 text-2xl font-bold text-white">What to Expect</h2>
-      <p class="mt-4 leading-8 text-slate-300">
-        The three-day programme features a mix of formats designed to provide both breadth and depth across the
-        summer school themes.
-      </p>
-      <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
-          <p class="text-sm font-semibold text-orange-200">8 Keynote Sessions</p>
-          <p class="mt-1 text-sm leading-6 text-slate-400">1-hour lectures by invited speakers (45 min talk + 15 min Q&amp;A)</p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">ROS2 and Robotics Foundations</div>
+            <div class="mt-1 text-sm text-slate-400">Essential tools and frameworks for modern robotics development</div>
+          </div>
         </div>
-        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
-          <p class="text-sm font-semibold text-orange-200">4 Hands-on Sessions</p>
-          <p class="mt-1 text-sm leading-6 text-slate-400">Practical tutorials and workshops (1.5–2 hours each)</p>
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">Robot Control and Autonomy</div>
+            <div class="mt-1 text-sm text-slate-400">Techniques for enabling autonomous robot decision-making and control</div>
+          </div>
         </div>
-        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
-          <p class="text-sm font-semibold text-orange-200">Panel Discussion</p>
-          <p class="mt-1 text-sm leading-6 text-slate-400">Perspectives on the future of robotics in Africa</p>
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">Perception and Sensor Integration</div>
+            <div class="mt-1 text-sm text-slate-400">Processing sensor data for robot understanding of the environment</div>
+          </div>
         </div>
-        <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
-          <p class="text-sm font-semibold text-orange-200">Poster Session</p>
-          <p class="mt-1 text-sm leading-6 text-slate-400">Showcase your work and connect with peers</p>
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">SLAM and Navigation</div>
+            <div class="mt-1 text-sm text-slate-400">Simultaneous localization, mapping, and autonomous navigation</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">Behaviour Design and Decision-Making</div>
+            <div class="mt-1 text-sm text-slate-400">Cognitive and intelligent robotics, planning, and reasoning</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">Sim-to-Real Transfer</div>
+            <div class="mt-1 text-sm text-slate-400">Bridging simulation and real-world robot deployment</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">HRI and Natural Language Interaction</div>
+            <div class="mt-1 text-sm text-slate-400">Human-robot interaction and language-based communication</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-400"></span>
+          <div>
+            <div class="text-sm font-semibold text-white">Real-World Robotics Applications</div>
+            <div class="mt-1 text-sm text-slate-400">Practical deployments across industries, agriculture, and service sectors</div>
+          </div>
         </div>
       </div>
-      <p class="mt-5 text-sm leading-7 text-slate-400">
-        Tutorials may cover introductory topics such as ROS, perception for robotics, and getting started with robot programming.
-      </p>
     </div>
 
-    <!-- Tentative Schedule -->
+    <!-- Programme Schedule -->
     <div class="reveal mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Tentative Schedule</p>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Programme & Schedule</p>
       <h2 class="text-3xl font-bold text-white">Three-day agenda</h2>
       <p class="mt-4 leading-8 text-slate-400">
-        Daily sessions run from 08:30 to 17:00. This schedule is tentative and subject to change.
+        The programme features keynote lectures, hands-on sessions, panel discussions, and networking opportunities. Daily sessions run from 08:30 to 17:00. This schedule is tentative and subject to change.
       </p>
     </div>
 
     <div class="reveal mb-10 overflow-x-auto">
-      <table class="w-full text-sm text-left text-slate-300 border-collapse">
+      <table class="w-full text-sm border-collapse">
         <thead>
           <tr class="border-b border-white/10">
-            <th class="py-3 pr-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80 w-[140px]">Time</th>
-            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80">Day 1</th>
-            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80">Day 2</th>
-            <th class="py-3 pl-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80">Day 3</th>
+            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80 text-left w-[140px]">Time</th>
+            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80 text-center">Day 1</th>
+            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80 text-center">Day 2</th>
+            <th class="py-3 px-4 text-xs font-semibold uppercase tracking-wider text-orange-300/80 text-center">Day 3</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-white/5">
+        <tbody class="divide-y divide-white/5 text-slate-300">
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">08:30 – 09:00</td>
-            <td class="py-3 px-4">Registration</td>
-            <td class="py-3 px-4">Registration</td>
-            <td class="py-3 pl-4">Registration</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">08:30 – 09:00</td>
+            <td rowspan="2" class="py-3 px-4 text-center">Registration</td>
+            <td class="py-3 px-4 text-center">Registration</td>
+            <td class="py-3 px-4 text-center">Registration</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">09:00 – 10:00</td>
-            <td class="py-3 px-4">Welcome Session</td>
-            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
-            <td class="py-3 pl-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">09:00 – 09:30</td>
+            <td rowspan="2" class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
+            <td rowspan="2" class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">10:00 – 10:30</td>
-            <td class="py-3 px-4 text-slate-500 italic">Coffee Break</td>
-            <td class="py-3 px-4 text-slate-500 italic">Coffee Break</td>
-            <td class="py-3 pl-4 text-slate-500 italic">Coffee Break</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">09:30 – 10:00</td>
+            <td class="py-3 px-4 text-center text-white font-semibold">Welcome Session</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">10:30 – 12:00</td>
-            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
-            <td class="py-3 px-4 text-cyan-300/80">Hands-on Session</td>
-            <td class="py-3 pl-4 text-emerald-300/80">Poster Session</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">10:00 – 10:30</td>
+            <td colspan="3" class="py-3 px-4 text-center text-slate-500 italic">Coffee Break</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">12:00 – 13:00</td>
-            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
-            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
-            <td class="py-3 pl-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">10:30 – 11:00</td>
+            <td rowspan="2" class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
+            <td rowspan="3" class="py-3 px-4 text-center text-cyan-300/80">Hands-on Session</td>
+            <td rowspan="3" class="py-3 px-4 text-center text-emerald-300/80">Poster Session</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">13:00 – 14:00</td>
-            <td class="py-3 px-4 text-slate-500 italic">Lunch Break</td>
-            <td class="py-3 px-4 text-slate-500 italic">Lunch Break</td>
-            <td class="py-3 pl-4 text-slate-500 italic">Lunch Break</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">11:00 – 11:30</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">14:00 – 15:00</td>
-            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
-            <td class="py-3 px-4 text-orange-200/90">Keynote</td>
-            <td class="py-3 pl-4 text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">11:30 – 12:00</td>
+            <td rowspan="2" class="py-3 px-4 text-center text-cyan-300/80">Hands-on Session</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">15:00 – 17:00</td>
-            <td class="py-3 px-4 text-cyan-300/80">Hands-on Session (2 hrs)</td>
-            <td class="py-3 px-4 text-violet-300/80">Panel Discussion</td>
-            <td class="py-3 pl-4 text-cyan-300/80">Hands-on Session</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">12:00 – 13:00</td>
+            <td class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 text-slate-400 whitespace-nowrap">16:30 – 17:00</td>
-            <td class="py-3 px-4"></td>
-            <td class="py-3 px-4"></td>
-            <td class="py-3 pl-4 text-white font-semibold">Closing Session</td>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">13:00 – 14:00</td>
+            <td colspan="3" class="py-3 px-4 text-center text-slate-500 italic">Lunch Break</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">14:00 – 15:00</td>
+            <td class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
+            <td class="py-3 px-4 text-center text-orange-200/90">Keynote</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">15:00 – 16:00</td>
+            <td rowspan="3" class="py-3 px-4 text-center text-cyan-300/80">Hands-on Session<br/><span class="text-xs text-slate-500">(2 hrs)</span></td>
+            <td rowspan="3" class="py-3 px-4 text-center text-violet-300/80">Panel Discussion</td>
+            <td rowspan="2" class="py-3 px-4 text-center text-cyan-300/80">Hands-on Session</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">16:00 – 16:30</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 text-slate-400 whitespace-nowrap">16:30 – 17:00</td>
+            <td class="py-3 px-4 text-center text-white font-semibold">Closing Session</td>
           </tr>
         </tbody>
       </table>
@@ -315,6 +303,167 @@ import Navbar from "../components/Navbar.astro";
         If you are interested in speaking or leading a session, please reach out via our Discord or email.
       </p>
     </div>
+
+    <!-- Organising Committee -->
+    <div class="reveal mb-4">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Organising Committee</p>
+      <h2 class="text-3xl font-bold text-white">The team making it happen</h2>
+      <p class="mt-4 leading-8 text-slate-400">
+        The summer school is being organized by dedicated researchers and community builders committed to advancing robotics education and research across Africa.
+      </p>
+    </div>
+
+    <div class="reveal relative mt-12">
+      <button
+        id="organizers-prev"
+        aria-label="Previous"
+        class="absolute -left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button
+        id="organizers-next"
+        aria-label="Next"
+        class="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+
+      <div
+        id="organizers-track"
+        class="flex gap-5 overflow-x-auto pb-4 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <img src="/images/people/ndivhuwo.png" alt="Ndivhuwo Makondo" class="h-20 w-20 rounded-full object-cover" />
+            <div class="mt-4 text-sm font-semibold text-white">Ndivhuwo Makondo</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">IBM Research Africa · Wits University</div>
+          </div>
+        </div>
+
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <img src="/images/people/sicelukwanda.png" alt="Sicelukwanda Zwane" class="h-20 w-20 rounded-full object-cover" />
+            <div class="mt-4 text-sm font-semibold text-white">Sicelukwanda Zwane</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">Kinisi Robotics · UCL</div>
+          </div>
+        </div>
+
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <img src="/images/people/tamlin.jpg" alt="Tamlin Love" class="h-20 w-20 rounded-full object-cover" />
+            <div class="mt-4 text-sm font-semibold text-white">Tamlin Love</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">IRI, CSIC-UPC</div>
+          </div>
+        </div>
+
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <img src="/images/people/geraud.png" alt="Geraud Nangue Tasse" class="h-20 w-20 rounded-full object-cover" />
+            <div class="mt-4 text-sm font-semibold text-white">Geraud Nangue Tasse</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">RAIL Lab, Wits University</div>
+          </div>
+        </div>
+
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <img src="/images/people/alexandra.png" alt="Alexandra Barry" class="h-20 w-20 rounded-full object-cover" />
+            <div class="mt-4 text-sm font-semibold text-white">Alexandra Barry</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">RAIL Lab, Wits University</div>
+          </div>
+        </div>
+
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <div class="flex h-20 w-20 items-center justify-center rounded-full bg-orange-400/10 text-lg font-bold text-orange-300">KN</div>
+            <div class="mt-4 text-sm font-semibold text-white">Kamryn Norton</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">&nbsp;</div>
+          </div>
+        </div>
+
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <div class="flex h-20 w-20 items-center justify-center rounded-full bg-orange-400/10 text-lg font-bold text-orange-300">TM</div>
+            <div class="mt-4 text-sm font-semibold text-white">Thabisa Maweni</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">&nbsp;</div>
+          </div>
+        </div>
+
+        <div class="reveal w-[60vw] shrink-0 sm:w-[40vw] lg:w-[calc(20%-1rem)] [scroll-snap-align:start]">
+          <div class="panel flex h-full flex-col items-center rounded-2xl p-5 text-center">
+            <div class="flex h-20 w-20 items-center justify-center rounded-full bg-orange-400/10 text-lg font-bold text-orange-300">AM</div>
+            <div class="mt-4 text-sm font-semibold text-white">Adam Mukuddem</div>
+            <div class="mt-2 text-xs leading-5 text-slate-400">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="organizers-dots" class="mt-6 flex justify-center gap-2"></div>
+    </div>
+
+    <script>
+      const ot = document.getElementById("organizers-track") as HTMLElement;
+      const od = document.getElementById("organizers-dots") as HTMLElement;
+      const oc = Array.from(ot.children) as HTMLElement[];
+
+      oc.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.setAttribute("aria-label", `Go to organizer ${i + 1}`);
+        dot.className = "h-2 w-2 rounded-full bg-white/20 transition-colors";
+        dot.addEventListener("click", () =>
+          ot.scrollTo({ left: oc[i].offsetLeft, behavior: "smooth" }),
+        );
+        od.appendChild(dot);
+      });
+
+      function activeIndex() {
+        const mid = ot.scrollLeft + ot.clientWidth / 2;
+        let idx = 0;
+        oc.forEach((c, i) => {
+          if (c.offsetLeft <= mid) idx = i;
+        });
+        return idx;
+      }
+
+      function syncDots() {
+        const a = activeIndex();
+        Array.from(od.children).forEach((d, i) => {
+          (d as HTMLElement).className =
+            `h-2 rounded-full transition-all ${i === a ? "w-6 bg-orange-400" : "w-2 bg-white/20"}`;
+        });
+      }
+
+      function visCount() {
+        return window.innerWidth >= 1024
+          ? 5
+          : window.innerWidth >= 640
+            ? 2
+            : 1;
+      }
+
+      document
+        .getElementById("organizers-prev")
+        ?.addEventListener("click", () => {
+          ot.scrollTo({
+            left: oc[Math.max(0, activeIndex() - visCount())].offsetLeft,
+            behavior: "smooth",
+          });
+        });
+      document
+        .getElementById("organizers-next")
+        ?.addEventListener("click", () => {
+          ot.scrollTo({
+            left: oc[Math.min(oc.length - 1, activeIndex() + visCount())]
+              .offsetLeft,
+            behavior: "smooth",
+          });
+        });
+
+      ot.addEventListener("scroll", syncDots, { passive: true });
+      syncDots();
+    </script>
+
+    <div class="mb-16"></div>
 
     <!-- Closing CTA -->
     <div class="reveal panel orange-glow rounded-[2rem] p-8 text-center">

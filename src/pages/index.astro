@@ -35,29 +35,48 @@ import ProjectCard from "../components/ProjectCard.astro";
                 {
                   label: "Annual Robotics Workshop",
                   note: "Returning in 2026 at the Deep Learning Indaba",
+                  link: null,
                 },
                 {
                   label: "African Robotics Summer School",
                   note: "A multi-day intensive — currently in planning",
+                  link: "/summer-school",
                 },
                 {
                   label: "Outreach &amp; School Programs",
                   note: "Bringing robotics to the next generation",
+                  link: null,
                 },
               ].map((item) => (
-                <div class="flex items-start gap-4 rounded-2xl border border-white/6 bg-white/3 px-5 py-4">
-                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400/60" />
-                  <div>
-                    <div
-                      class="text-sm font-semibold text-white"
-                      set:html={item.label}
-                    />
-                    <div class="mt-0.5 text-sm text-slate-400">{item.note}</div>
+                item.link ? (
+                  <a href={item.link} class="flex items-start gap-4 rounded-2xl border border-white/6 bg-white/3 px-5 py-4 transition hover:border-orange-400/30 hover:bg-orange-400/5">
+                    <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400/60" />
+                    <div>
+                      <div
+                        class="text-sm font-semibold text-white"
+                        set:html={item.label}
+                      />
+                      <div class="mt-0.5 text-sm text-slate-400">{item.note}</div>
+                    </div>
+                    <span class="ml-auto shrink-0 rounded-full border border-green-400/25 bg-green-400/10 px-2.5 py-0.5 text-xs text-green-300">
+                      Learn More
+                    </span>
+                  </a>
+                ) : (
+                  <div class="flex items-start gap-4 rounded-2xl border border-white/6 bg-white/3 px-5 py-4">
+                    <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400/60" />
+                    <div>
+                      <div
+                        class="text-sm font-semibold text-white"
+                        set:html={item.label}
+                      />
+                      <div class="mt-0.5 text-sm text-slate-400">{item.note}</div>
+                    </div>
+                    <span class="ml-auto shrink-0 rounded-full border border-amber-400/25 bg-amber-400/10 px-2.5 py-0.5 text-xs text-amber-300">
+                      Soon
+                    </span>
                   </div>
-                  <span class="ml-auto shrink-0 rounded-full border border-amber-400/25 bg-amber-400/10 px-2.5 py-0.5 text-xs text-amber-300">
-                    Soon
-                  </span>
-                </div>
+                )
               ))
             }
           </div>
