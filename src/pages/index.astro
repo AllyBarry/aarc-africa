@@ -160,36 +160,18 @@ import ProjectCard from "../components/ProjectCard.astro";
           aria-label="Previous"
           class="absolute -left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"></path></svg
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
         </button>
         <button
           id="carousel-next"
           aria-label="Next"
           class="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur hover:bg-white/10 lg:flex"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"></path></svg
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
         </button>
 
         <!-- scroll track -->
@@ -197,43 +179,51 @@ import ProjectCard from "../components/ProjectCard.astro";
           id="carousel-track"
           class="flex gap-6 overflow-x-auto pb-4 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
-          <div
-            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
-          >
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+            <ProjectCard
+              title="ICRA 2026 Johannesburg Satellite Event"
+              text="Experience ICRA 2026 live in Johannesburg."
+              tags={["ICRA", "Events", "Community"]}
+              buttonUrl="/icra-2026"
+            />
+          </div>
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
+            <ProjectCard
+              title="4th Workshop on Robotics at the Deep Learning Indaba 2026"
+              text="Join us in Lagos, Nigeria for the 4th workshop on robotics at the Deep Learning Indaba 2026, exploring LLMs in Robotics."
+              tags={["Workshops", "Education", "Indaba"]}
+              buttonUrl="/indaba-2026"
+            />
+          </div>
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
             <ProjectCard
               title="3rd Workshop on Robotics at the Deep Learning Indaba 2025"
               text="Learn more about the 3rd workshop on robotics at the Deep Learning Indaba 2025."
-              tags={["Workshops", "Future", "Innovation"]}
+              tags={["Workshops", "Education", "Indaba"]}
               buttonUrl="https://sites.google.com/view/robot-learning-for-africa-2025/home"
             />
           </div>
-          <div
-            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
-          >
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
             <ProjectCard
               title="ICRA@40 - Africa, Satellite Event"
               text="Look back on the IEEE ICRA@40 satellite event, hosted at Wits University in 2024."
-              tags={["Events", "ICRA", "Africa"]}
+              tags={["Events", "ICRA", "Community"]}
               buttonUrl="https://icra40.ieee.org/icra-2024/icra40-africa/"
             />
           </div>
-          <div
-            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
-          >
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
             <ProjectCard
               title="2nd Workshop on Robotics at the Deep Learning Indaba 2024"
               text="Learn more about the 2nd workshop on robotics at the Deep Learning Indaba 2024."
-              tags={["Workshops", "Robotics", "Deep Learning"]}
+              tags={["Workshops", "Education", "Indaba"]}
               buttonUrl="https://sites.google.com/view/robotlearning4africa-2024"
             />
           </div>
-          <div
-            class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]"
-          >
+          <div class="reveal w-[85vw] shrink-0 sm:w-[60vw] lg:w-[calc(33.333%-1rem)] [scroll-snap-align:start]">
             <ProjectCard
               title="Workshop on Robotics at the Deep Learning Indaba 2023"
               text="Learn more about robotics at the Deep Learning Indaba 2023."
-              tags={["Workshops", "Education", "AI"]}
+              tags={["Workshops", "Education", "Indaba"]}
               buttonUrl="https://sites.google.com/view/robotlearning4africa"
             />
           </div>
@@ -245,12 +235,9 @@ import ProjectCard from "../components/ProjectCard.astro";
 
       <script>
         const track = document.getElementById("carousel-track") as HTMLElement;
-        const dotsContainer = document.getElementById(
-          "carousel-dots",
-        ) as HTMLElement;
+        const dotsContainer = document.getElementById("carousel-dots") as HTMLElement;
         const cards = Array.from(track.children) as HTMLElement[];
 
-        // build dots
         cards.forEach((_, i) => {
           const dot = document.createElement("button");
           dot.className = "h-2 w-2 rounded-full bg-white/20 transition-colors";
@@ -282,27 +269,19 @@ import ProjectCard from "../components/ProjectCard.astro";
           });
         }
 
-        document
-          .getElementById("carousel-prev")
-          ?.addEventListener("click", () => {
-            const center = track.scrollLeft + track.clientWidth / 2;
-            let active = 0;
-            cards.forEach((card, i) => {
-              if (card.offsetLeft <= center) active = i;
-            });
-            scrollTo(Math.max(0, active - getVisibleCount()));
-          });
+        document.getElementById("carousel-prev")?.addEventListener("click", () => {
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let active = 0;
+          cards.forEach((card, i) => { if (card.offsetLeft <= center) active = i; });
+          scrollTo(Math.max(0, active - getVisibleCount()));
+        });
 
-        document
-          .getElementById("carousel-next")
-          ?.addEventListener("click", () => {
-            const center = track.scrollLeft + track.clientWidth / 2;
-            let active = 0;
-            cards.forEach((card, i) => {
-              if (card.offsetLeft <= center) active = i;
-            });
-            scrollTo(Math.min(cards.length - 1, active + getVisibleCount()));
-          });
+        document.getElementById("carousel-next")?.addEventListener("click", () => {
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let active = 0;
+          cards.forEach((card, i) => { if (card.offsetLeft <= center) active = i; });
+          scrollTo(Math.min(cards.length - 1, active + getVisibleCount()));
+        });
 
         track.addEventListener("scroll", updateDots, { passive: true });
         updateDots();
