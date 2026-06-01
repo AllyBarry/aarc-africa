@@ -1,0 +1,108 @@
+---
+interface NavLink {
+  label: string;
+  href: string; // in-page anchor, e.g. "#about"
+}
+
+interface Props {
+  /** Sub-topic anchor links for this page */
+  links: NavLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="relative" data-eventnav>
+  <button
+    id="eventnav-toggle"
+    aria-label="Jump to section"
+    aria-expanded="false"
+    class="inline-flex items-center justify-center rounded-lg border border-white/10 p-2 text-slate-400 transition hover:bg-white/10 hover:text-white"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <div
+    id="eventnav-menu"
+    class="absolute right-0 z-50 mt-2 hidden w-52 rounded-xl border border-white/10 bg-[#0c131b]/95 p-1.5 shadow-xl backdrop-blur-xl"
+  >
+    {
+      links.map((l) => (
+        <a
+          href={l.href}
+          data-spy
+          class="block rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white"
+        >
+          {l.label}
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const root = document.querySelector("[data-eventnav]");
+  const toggle = document.getElementById("eventnav-toggle");
+  const menu = document.getElementById("eventnav-menu");
+
+  function closeMenu() {
+    menu?.classList.add("hidden");
+    toggle?.setAttribute("aria-expanded", "false");
+  }
+
+  toggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = menu?.classList.toggle("hidden") === false;
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+
+  // Close when picking a section, clicking outside, or pressing Escape
+  menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+  document.addEventListener("click", (e) => {
+    if (!root?.contains(e.target as Node)) closeMenu();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Scroll-spy: highlight the link whose section is in view
+  const spyLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>("[data-eventnav] a[data-spy]"),
+  );
+  const sectionToLink = new Map<Element, HTMLAnchorElement>();
+  spyLinks.forEach((a) => {
+    const id = a.getAttribute("href")?.slice(1);
+    if (!id) return;
+    const section = document.getElementById(id);
+    if (section) sectionToLink.set(section, a);
+  });
+
+  const activeClasses = ["bg-white/10", "text-white"];
+
+  function setActive(section: Element | null) {
+    spyLinks.forEach((a) => {
+      a.classList.remove(...activeClasses);
+      a.classList.add("text-slate-300");
+    });
+    const link = section ? sectionToLink.get(section) : null;
+    if (link) {
+      link.classList.add(...activeClasses);
+      link.classList.remove("text-slate-300");
+    }
+  }
+
+  if (sectionToLink.size) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActive(visible[0].target);
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: [0, 0.25, 0.5, 1] },
+    );
+    sectionToLink.forEach((_, section) => observer.observe(section));
+  }
+</script>

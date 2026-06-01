@@ -1,530 +1,290 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4th Workshop on Robotics and Automation in Africa 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EventNav from "../components/EventNav.astro";
 
-  :root {
-    --bg: #0a0f1a;
-    --surface: #111827;
-    --surface2: #1a2436;
-    --border: rgba(255,255,255,0.07);
-    --text: #f0f4ff;
-    --muted: #8a9bbf;
-    --accent: #f97316;
-    --accent2: #38bdf8;
-    --accent3: #34d399;
-    --accent-dim: rgba(249,115,22,0.12);
-    --cyan-dim: rgba(56,189,248,0.10);
-    --green-dim: rgba(52,211,153,0.10);
-  }
+const organisers = [
+  { name: "Alexandra Barry", affiliation: "University of the Witwatersrand", image: "/images/people/alexandra.png" },
+  { name: "Geraud Nangue Tasse", affiliation: "University of the Witwatersrand", image: "/images/people/geraud.png" },
+  { name: "Jenalea Rajab", affiliation: "DEI Projects", image: "/images/people/jenalea.png" },
+  { name: "Kamryn Norton", affiliation: "Opti-Num Solutions · African Robotics Unit (UCT)", image: "/images/people/kam.png" },
+  { name: "Ndivhuwo Makondo", affiliation: "IBM Research", image: "/images/people/ndivhuwo.png" },
+  { name: "Sicelukwanda Zwane", affiliation: "Kinisi Robotics", image: "/images/people/sicelukwanda.png" },
+  { name: "Tamlin Love", affiliation: "Institut de Robòtica i Informàtica Industrial (CSIC-UPC)", image: "/images/people/tamlin.jpg" },
+  { name: "Zukisa Mbuli", affiliation: "University of the Witwatersrand", image: "/images/people/zukisa.png" },
+];
 
-  html { scroll-behavior: smooth; }
+const previousEditions = [
+  { label: "Rwanda 2025", href: "https://sites.google.com/view/robot-learning-for-africa-2025/home" },
+  { label: "Senegal 2024", href: "https://sites.google.com/view/robotlearning4africa-2024" },
+  { label: "Ghana 2023", href: "https://sites.google.com/view/robotlearning4africa" },
+];
+---
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    font-size: 16px;
-  }
+<BaseLayout
+  title="4th Workshop on Robotics & Automation in Africa 2026 — AARC"
+  description="The 4th Workshop on Robotics and Automation in Africa, hosted at the Deep Learning Indaba 2026 in Lagos, Nigeria — exploring LLMs in Robotics."
+>
+  <main class="mx-auto max-w-4xl px-6 pt-10 pb-20 lg:px-8">
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(10,15,26,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 60px;
-  }
-  .nav-brand { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--accent); text-decoration: none; }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
-
-  /* HERO */
-  .hero {
-    max-width: 900px; margin: 0 auto;
-    padding: 5rem 2rem 3rem;
-  }
-  .back-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    color: var(--muted); text-decoration: none; font-size: 0.85rem;
-    margin-bottom: 2.5rem; transition: color 0.2s;
-  }
-  .back-link:hover { color: var(--accent); }
-  .eyebrow {
-    font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 1rem;
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
-    line-height: 1.15;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-  .hero h1 em { font-style: italic; color: var(--accent); }
-  .hero-sub {
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    color: #a8b8d8;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-  }
-  .hero-desc { color: var(--muted); max-width: 620px; font-size: 1.05rem; margin-bottom: 2rem; }
-  .badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; }
-  .badge {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    border-radius: 999px; padding: 0.25rem 0.85rem;
-    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-  }
-  .badge-orange { background: var(--accent-dim); border: 1px solid rgba(249,115,22,0.25); color: #fdba74; }
-  .badge-cyan { background: var(--cyan-dim); border: 1px solid rgba(56,189,248,0.25); color: #7dd3fc; }
-  .badge-green { background: var(--green-dim); border: 1px solid rgba(52,211,153,0.25); color: #6ee7b7; }
-
-  .btn-primary {
-    display: inline-block; background: var(--accent); color: #fff;
-    border-radius: 0.75rem; padding: 0.7rem 1.5rem;
-    font-weight: 600; font-size: 0.9rem; text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-primary:hover { background: #ea6c06; transform: translateY(-1px); }
-  .btn-secondary {
-    display: inline-block; background: transparent;
-    border: 1px solid rgba(255,255,255,0.15); color: var(--muted);
-    border-radius: 0.75rem; padding: 0.7rem 1.5rem;
-    font-weight: 500; font-size: 0.9rem; text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-secondary:hover { border-color: rgba(255,255,255,0.3); color: var(--text); }
-  .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-
-  /* SECTIONS */
-  .section { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem; }
-  .section-label {
-    font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    color: rgba(249,115,22,0.8); margin-bottom: 0.5rem;
-  }
-  .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--text);
-    margin-bottom: 1.5rem;
-  }
-
-  /* PANEL */
-  .panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 1.5rem;
-    padding: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  /* GLANCE LIST */
-  .glance-list { list-style: none; space-y: 0.5rem; }
-  .glance-list li {
-    display: flex; gap: 0.75rem; align-items: flex-start;
-    font-size: 0.9rem; color: #b0c0de; padding: 0.35rem 0;
-  }
-  .glance-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
-  .glance-list strong { color: var(--text); }
-
-  /* SCHEDULE */
-  .schedule-table { width: 100%; border-collapse: collapse; }
-  .schedule-table tr { border-bottom: 1px solid var(--border); }
-  .schedule-table tr:last-child { border-bottom: none; }
-  .schedule-table td { padding: 1rem 0.5rem; font-size: 0.9rem; }
-  .time-cell { width: 130px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .session-title { color: var(--text); font-weight: 500; }
-
-  /* CIRCLES GRID */
-  .circles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    gap: 1.5rem;
-  }
-  .person-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
-  .avatar {
-    width: 72px; height: 72px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 600; font-size: 1.1rem;
-    border: 2px solid var(--border);
-    flex-shrink: 0;
-  }
-  .avatar-gray { background: #1e2a3a; color: var(--muted); }
-  .avatar-orange { background: rgba(249,115,22,0.15); color: #fdba74; border-color: rgba(249,115,22,0.25); }
-  .avatar-cyan { background: rgba(56,189,248,0.12); color: #7dd3fc; border-color: rgba(56,189,248,0.2); }
-  .avatar-green { background: rgba(52,211,153,0.12); color: #6ee7b7; border-color: rgba(52,211,153,0.2); }
-  .avatar-purple { background: rgba(167,139,250,0.12); color: #c4b5fd; border-color: rgba(167,139,250,0.2); }
-  .avatar-pink { background: rgba(244,114,182,0.12); color: #f9a8d4; border-color: rgba(244,114,182,0.2); }
-  .avatar-amber { background: rgba(251,191,36,0.12); color: #fde68a; border-color: rgba(251,191,36,0.2); }
-  .person-name { font-size: 0.82rem; font-weight: 600; color: var(--text); line-height: 1.3; }
-  .person-affil { font-size: 0.75rem; color: var(--muted); line-height: 1.3; }
-  .coming-soon-circle {
-    width: 72px; height: 72px; border-radius: 50%;
-    border: 2px dashed rgba(255,255,255,0.15);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; color: rgba(255,255,255,0.2);
-  }
-
-  /* SPONSORS */
-  .sponsors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1rem; margin-top: 1rem;
-  }
-  .sponsor-tile {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 1rem;
-    height: 80px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .sponsor-tile span { color: rgba(255,255,255,0.2); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
-
-  /* PREV EVENTS */
-  .prev-events-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-  .prev-events-list a {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    color: var(--accent2); text-decoration: none; font-size: 0.95rem;
-    transition: color 0.2s;
-  }
-  .prev-events-list a:hover { color: #bae6fd; }
-  .prev-events-list a svg { opacity: 0.6; flex-shrink: 0; }
-
-  /* CTA */
-  .cta-panel {
-    background: var(--surface);
-    border: 1px solid rgba(249,115,22,0.2);
-    border-radius: 2rem;
-    padding: 3rem 2.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-panel::before {
-    content: '';
-    position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
-    width: 300px; height: 200px;
-    background: radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-panel h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.75rem; }
-  .cta-panel p { color: var(--muted); max-width: 480px; margin: 0 auto 1.5rem; }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2.5rem 2rem;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-
-  /* DIVIDER */
-  hr.section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-  /* REVEAL */
-  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-</style>
-</head>
-<body>
-
-<nav>
-  <a class="nav-brand" href="#">WRAA 2026</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-    <li><a href="#speakers">Speakers</a></li>
-    <li><a href="#organisers">Organisers</a></li>
-    <li><a href="#sponsors">Sponsors</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<div class="hero reveal">
-  <a href="/" class="back-link">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-    Back to home
-  </a>
-  <p class="eyebrow">Workshop · 6th or 7th August 2026 · Lagos, Nigeria</p>
-  <h1>4th Workshop on<br><em>Robotics &amp; Automation</em><br>in Africa</h1>
-  <p class="hero-sub">Theme: LLMs in Robotics</p>
-  <p class="hero-desc">Join us in exploring the frontiers of deep learning and LLMs in robotics, and what this technology means for the African continent.</p>
-  <div class="badges">
-    <span class="badge badge-orange">In-Person Workshop</span>
-    <span class="badge badge-cyan">Pan-Atlantic University</span>
-    <span class="badge badge-green">Deep Learning Indaba</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="section reveal">
-  <p class="section-label">About</p>
-  <h2 class="section-title">Bringing robotics research to the continent</h2>
-  <div class="panel">
-    <p style="color: #b0c0de; margin-bottom: 1rem; line-height: 1.8;">
-      The <strong style="color:var(--text)">Workshop on Robotics and Automation in Africa</strong> is an annual gathering dedicated to advancing robotics research and practice across the African continent. Now in its fourth edition, the workshop focuses on the intersection of large language models and robotic systems — exploring how these technologies can be developed, adapted, and deployed in African contexts.
-    </p>
-    <p style="color: #b0c0de; margin-bottom: 1rem; line-height: 1.8;">
-      Hosted at the Deep Learning Indaba at <strong style="color:var(--text)">Pan-Atlantic University in Lagos, Nigeria</strong>, this edition brings together researchers, engineers, students, and industry practitioners for a day of tutorials, panels, and community building. The workshop is part of a growing series of events committed to nurturing robotics talent across the continent.
-    </p>
-    <p style="color: #b0c0de; line-height: 1.8;">
-      The workshop is organised by the <strong style="color:var(--text)">Akili African Robotics Community (AARC)</strong> — an organisation dedicated to promoting accessibility, community, and education for robotics across Africa.
-    </p>
-    <div style="margin-top: 1.5rem; background: var(--surface2); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem;">
-      <p style="font-size: 0.85rem; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem;">At a Glance</p>
-      <ul class="glance-list">
-        <li><span class="glance-dot"></span><span><strong>When:</strong> 6th or 7th August 2026</span></li>
-        <li><span class="glance-dot"></span><span><strong>Where:</strong> Pan-Atlantic University, Lagos, Nigeria</span></li>
-        <li><span class="glance-dot"></span><span><strong>Theme:</strong> LLMs in Robotics</span></li>
-        <li><span class="glance-dot"></span><span><strong>Organised by:</strong> Akili African Robotics Community (AARC)</span></li>
-        <li><span class="glance-dot"></span><span><strong>Open to:</strong> Beginners &amp; Experts</span></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- SCHEDULE -->
-<div id="schedule" class="section reveal">
-  <p class="section-label">Programme</p>
-  <h2 class="section-title">Workshop Schedule</h2>
-  <div class="panel">
-    <table class="schedule-table">
-      <tbody>
-        <tr>
-          <td class="time-cell">09:00 – 09:20</td>
-          <td>
-            <span class="badge badge-cyan" style="margin-bottom:0.4rem; font-size:0.65rem;">Opening</span>
-            <p class="session-title">Welcome and Introduction</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="time-cell">09:20 – 11:00</td>
-          <td>
-            <span class="badge badge-orange" style="margin-bottom:0.4rem; font-size:0.65rem;">Tutorial</span>
-            <p class="session-title">Interactive Tutorial</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="time-cell">11:00 – 11:45</td>
-          <td>
-            <span class="badge badge-green" style="margin-bottom:0.4rem; font-size:0.65rem;">Panel</span>
-            <p class="session-title">Panel Discussion</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="time-cell">11:45 – 12:00</td>
-          <td>
-            <span class="badge badge-cyan" style="margin-bottom:0.4rem; font-size:0.65rem;">Closing</span>
-            <p class="session-title">Closing Remarks and Call to Action</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- SPEAKERS -->
-<div id="speakers" class="section reveal">
-  <p class="section-label">Speakers</p>
-  <h2 class="section-title">Confirmed Speakers</h2>
-  <div class="panel" style="text-align:center; padding: 3rem 2rem;">
-    <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1.5rem;">
-      <div class="coming-soon-circle">?</div>
-      <div class="coming-soon-circle">?</div>
-      <div class="coming-soon-circle">?</div>
-      <div class="coming-soon-circle">?</div>
-    </div>
-    <p style="color: var(--muted); font-size:0.9rem;">Speaker announcements coming soon.</p>
-    <p style="color: rgba(255,255,255,0.3); font-size: 0.8rem; margin-top: 0.4rem;">
-      Follow us on <a href="https://www.linkedin.com/company/aarc-africa" target="_blank" rel="noopener noreferrer" style="color: var(--accent2); text-decoration: none;">LinkedIn</a> for updates.
-    </p>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- ORGANISERS -->
-<div id="organisers" class="section reveal">
-  <p class="section-label">Organisers</p>
-  <h2 class="section-title">Meet the team</h2>
-  <div class="panel">
-    <div class="circles-grid">
-      <div class="person-card">
-        <img src="/images/people/alexandra.png" alt="Alexandra Barry" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--border);">
-        <p class="person-name">Alexandra Barry</p>
-        <p class="person-affil">University of the Witwatersrand</p>
+    <!-- Header -->
+    <div class="reveal mb-12">
+      <div class="mb-6 flex items-center justify-between gap-4">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-orange-300 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to home
+        </a>
+        <EventNav
+          links={[
+            { label: "About", href: "#about" },
+            { label: "Schedule", href: "#schedule" },
+            { label: "Speakers", href: "#speakers" },
+            { label: "Organisers", href: "#organisers" },
+            { label: "Sponsors", href: "#sponsors" },
+          ]}
+        />
       </div>
-      <div class="person-card">
-        <img src="/images/people/geraud.png" alt="Geraud Nangue Tasse" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--border);">
-        <p class="person-name">Geraud Nangue Tasse</p>
-        <p class="person-affil">University of the Witwatersrand</p>
-      </div>
-      <div class="person-card">
-        <img src="/images/people/jenalea.png" alt="Jenalea Rajab" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--border);">
-        <p class="person-name">Jenalea Rajab</p>
-        <p class="person-affil">DEI Projects</p>
-      </div>
-      <div class="person-card">
-        <img src="/images/people/ndivhuwo.png" alt="Ndivhuwo Makondo" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--border);">
-        <p class="person-name">Ndivhuwo Makondo</p>
-        <p class="person-affil">IBM Research</p>
-      </div>
-      <div class="person-card">
-        <img src="/images/people/sicelukwanda.png" alt="Sicelukwanda Zwane" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--border);">
-        <p class="person-name">Sicelukwanda Zwane</p>
-        <p class="person-affil">Kinisi Robotics</p>
-      </div>
-      <div class="person-card">
-        <img src="/images/people/tamlin.jpg" alt="Tamlin Love" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--border);">
-        <p class="person-name">Tamlin Love</p>
-        <p class="person-affil">Institut de Robòtica i Informàtica Industrial (CSIC-UPC)</p>
-      </div>
-      <div class="person-card">
-        <img src="/images/people/zukisa.png" alt="Zukisa Mbuli" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--border);">
-        <p class="person-name">Zukisa Mbuli</p>
-        <p class="person-affil">University of the Witwatersrand</p>
+      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">Workshop · 6th or 7th August 2026 · Lagos, Nigeria</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight">4th Workshop on <span class="nasal-title">Robotics &amp; Automation</span> in Africa</h1>
+      <p class="mb-5 mt-2 text-lg md:text-xl font-semibold text-slate-300 leading-snug">Theme: LLMs in Robotics</p>
+      <p class="max-w-2xl text-base leading-7 text-slate-400">
+        Join us in exploring the frontiers of deep learning and LLMs in robotics, and what this technology
+        means for the African continent.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2.5">
+        <span class="inline-flex items-center gap-2 rounded-full border border-orange-400/25 bg-orange-400/10 px-3 py-1 text-[0.7rem] font-semibold text-orange-200 uppercase tracking-widest">In-Person Workshop</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-[0.7rem] font-semibold text-cyan-200 uppercase tracking-widest">Pan-Atlantic University</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-[0.7rem] font-semibold text-emerald-200 uppercase tracking-widest">Deep Learning Indaba</span>
       </div>
     </div>
-  </div>
-</div>
 
-<hr class="section-divider">
-
-<!-- SPONSORS -->
-<div id="sponsors" class="section reveal">
-  <p class="section-label">Sponsors</p>
-  <h2 class="section-title">Our Sponsors</h2>
-  <div class="panel">
-    <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.8;">
-      We are especially grateful to our sponsors for making this event possible.
-    </p>
-    <div class="sponsors-grid">
-      <div class="sponsor-tile"><span>Sponsor A</span></div>
-      <div class="sponsor-tile"><span>Sponsor B</span></div>
-      <div class="sponsor-tile"><span>Sponsor C</span></div>
-      <div class="sponsor-tile"><span>Sponsor D</span></div>
-      <div class="sponsor-tile"><span>Sponsor E</span></div>
+    <!-- About -->
+    <div id="about" class="reveal scroll-mt-20 panel rounded-3xl p-6 mb-8">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">About</p>
+      <h2 class="mt-1 text-xl font-bold text-white">Bringing robotics research to the continent</h2>
+      <p class="mt-3 text-[0.95rem] leading-7 text-slate-300">
+        The <strong class="text-white">Workshop on Robotics and Automation in Africa</strong> is an annual
+        gathering dedicated to advancing robotics research and practice across the African continent. Now in
+        its fourth edition, the workshop focuses on the intersection of large language models and robotic
+        systems &mdash; exploring how these technologies can be developed, adapted, and deployed in African
+        contexts.
+      </p>
+      <p class="mt-3 text-[0.95rem] leading-7 text-slate-300">
+        Hosted at the Deep Learning Indaba at <strong class="text-white">Pan-Atlantic University in Lagos,
+        Nigeria</strong>, this edition brings together researchers, engineers, students, and industry
+        practitioners for a day of tutorials, panels, and community building. The workshop is part of a
+        growing series of events committed to nurturing robotics talent across the continent.
+      </p>
+      <p class="mt-3 text-[0.95rem] leading-7 text-slate-300">
+        The workshop is organised by the <strong class="text-white">Akili African Robotics Community
+        (AARC)</strong> &mdash; an organisation dedicated to promoting accessibility, community, and
+        education for robotics across Africa.
+      </p>
+      <div class="mt-5 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-4">
+        <p class="mb-2.5 text-sm font-semibold text-orange-200">At a Glance</p>
+        <ul class="space-y-1.5 text-sm leading-6 text-slate-300">
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">When:</strong>&nbsp;6th or 7th August 2026</li>
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Where:</strong>&nbsp;Pan-Atlantic University, Lagos, Nigeria</li>
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Theme:</strong>&nbsp;LLMs in Robotics</li>
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Organised by:</strong>&nbsp;Akili African Robotics Community (AARC)</li>
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><strong class="text-white">Open to:</strong>&nbsp;Beginners &amp; Experts</li>
+        </ul>
+      </div>
     </div>
-    <p style="color: rgba(255,255,255,0.2); font-size: 0.8rem; margin-top: 1rem; text-align: center;">Interested in sponsoring? <a href="mailto:tlove@iri.upc.edu" style="color: var(--accent); text-decoration: none;">Get in touch</a></p>
-  </div>
-</div>
 
-<hr class="section-divider">
+    <!-- Schedule -->
+    <div id="schedule" class="reveal scroll-mt-20 mb-3">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">Programme</p>
+      <h2 class="text-2xl font-bold text-white">Workshop Schedule</h2>
+    </div>
 
-<!-- ABOUT US -->
-<div class="section reveal">
-  <p class="section-label">About Us</p>
-  <h2 class="section-title">Who we are</h2>
-  <div class="panel">
-    <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;">
-      <p style="color: #b0c0de; line-height: 1.9; font-size: 1.05rem;">
-        The word <strong style="color:var(--text)">"Akili"</strong> comes from Swahili and means <em>mind, wisdom, intelligence or ingenuity</em>. It represents the collective wisdom, critical thinking and problem solving of African researchers, practitioners, teachers and students. We also embrace "Akili" as a symbol of the artificial mind which we design, create and embed in robots. This dual meaning lies at the heart of our community. By bringing together the many minds of Africans working in robotics, across borders, disciplines and generations, we can shape a strong and inclusive ecosystem on the continent and build better robot minds.
+    <div class="reveal panel rounded-3xl p-6 mb-8">
+      <div class="divide-y divide-white/5">
+        <div class="flex gap-4 py-3">
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">09:00 – 09:20</div>
+          <div>
+            <span class="mb-1.5 inline-block rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-cyan-200">Opening</span>
+            <p class="text-sm font-semibold text-white">Welcome and Introduction</p>
+          </div>
+        </div>
+        <div class="flex gap-4 py-3">
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">09:20 – 11:00</div>
+          <div>
+            <span class="mb-1.5 inline-block rounded-full border border-orange-400/20 bg-orange-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-orange-200">Tutorial</span>
+            <p class="text-sm font-semibold text-white">Interactive Tutorial</p>
+          </div>
+        </div>
+        <div class="flex gap-4 py-3">
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">11:00 – 11:45</div>
+          <div>
+            <span class="mb-1.5 inline-block rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-emerald-200">Panel</span>
+            <p class="text-sm font-semibold text-white">Panel Discussion</p>
+          </div>
+        </div>
+        <div class="flex gap-4 py-3">
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">11:45 – 12:00</div>
+          <div>
+            <span class="mb-1.5 inline-block rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-cyan-200">Closing</span>
+            <p class="text-sm font-semibold text-white">Closing Remarks and Call to Action</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speakers -->
+    <div id="speakers" class="reveal scroll-mt-20 mb-3">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">Speakers</p>
+      <h2 class="text-2xl font-bold text-white">Confirmed Speakers</h2>
+    </div>
+
+    <div class="reveal panel rounded-3xl p-6 mb-8 text-center">
+      <div class="mb-5 flex flex-wrap justify-center gap-4">
+        {[0, 1, 2, 3].map(() => (
+          <div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-white/15 text-xl text-white/20">?</div>
+        ))}
+      </div>
+      <p class="text-sm text-slate-400">Speaker announcements coming soon.</p>
+      <p class="mt-1 text-xs text-slate-500">
+        Follow us on
+        <a href="https://www.linkedin.com/company/aarc-africa" target="_blank" rel="noopener noreferrer" class="text-cyan-300 hover:text-cyan-200 transition-colors">LinkedIn</a>
+        for updates.
       </p>
     </div>
 
-    <p style="color: #b0c0de; line-height: 1.8; margin-bottom: 1rem;">
-      <strong style="color:var(--text)">Akili African Robotics Community (AARC)</strong> is a network of African roboticists seeking to bring together robotics practitioners from across the continent and beyond to create a shared space for collaboration, knowledge exchange and mutual support. AARC exists to connect people who might otherwise work in isolation and to amplify African voices and innovations in the global robotics community.
-    </p>
-    <p style="color: #b0c0de; line-height: 1.8; margin-bottom: 1rem;">
-      The world is experiencing a rapid rise in interest and expertise in machine learning, artificial intelligence, and robotics, and Africa is no different. Initiatives such as the Deep Learning Indaba demonstrate the strength, talent, and momentum of African researchers and practitioners in AI and related fields. Across universities, startups, research labs, and innovation hubs, new communities are forming and producing world-class work. Robotics is a natural next frontier for this growing ecosystem.
-    </p>
-    <p style="color: #b0c0de; line-height: 1.8; margin-bottom: 1.5rem;">
-      Despite this progress, significant gaps remain. Many aspiring roboticists still face limited access to hardware, software, funding, training, and research opportunities. At the same time, there is a lack of connectivity between individuals and groups working on robotics across the continent, making collaboration, mentorship, and shared learning more difficult than they should be. AARC exists to help close these gaps.
-    </p>
+    <!-- Organisers -->
+    <div id="organisers" class="reveal scroll-mt-20 mb-3">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">Organisers</p>
+      <h2 class="text-2xl font-bold text-white">Meet the team</h2>
+    </div>
 
-    <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;">
-      <p style="font-size: 0.85rem; font-weight: 600; color: var(--accent); margin-bottom: 0.9rem;">Our Mission</p>
-      <ul style="list-style:none; display:flex; flex-direction:column; gap:0.65rem;">
-        <li style="display:flex; gap:0.75rem; align-items:flex-start; color:#b0c0de; font-size:0.9rem; line-height:1.7;">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:0.55rem;"></span>
-          <span><strong style="color:var(--text)">Promote access</strong> to robots, tools, software, and learning resources for researchers, practitioners and students in Africa.</span>
-        </li>
-        <li style="display:flex; gap:0.75rem; align-items:flex-start; color:#b0c0de; font-size:0.9rem; line-height:1.7;">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:0.55rem;"></span>
-          <span><strong style="color:var(--text)">Foster collaboration</strong> between African roboticists, as well as between academia, industry, and innovation hubs.</span>
-        </li>
-        <li style="display:flex; gap:0.75rem; align-items:flex-start; color:#b0c0de; font-size:0.9rem; line-height:1.7;">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:0.55rem;"></span>
-          <span><strong style="color:var(--text)">Educate and inspire</strong> future generations through workshops, research stays, outreach programs, and community-led events at all levels — from schools to universities and beyond.</span>
-        </li>
+    <div class="reveal grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mb-8">
+      {organisers.map((person) => (
+        <div class="panel flex flex-col items-center gap-2.5 rounded-2xl p-4 text-center">
+          <img src={person.image} alt={person.name} class="h-16 w-16 rounded-full object-cover border-2 border-orange-400/25 ring-2 ring-orange-400/10" />
+          <div>
+            <div class="text-sm font-semibold text-white">{person.name}</div>
+            <div class="mt-0.5 text-xs leading-5 text-slate-400">{person.affiliation}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sponsors -->
+    <div id="sponsors" class="reveal scroll-mt-20 mb-3">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">Sponsors</p>
+      <h2 class="text-2xl font-bold text-white">Our Sponsors</h2>
+    </div>
+
+    <div class="reveal panel rounded-3xl p-6 mb-8">
+      <p class="mb-4 text-[0.95rem] leading-7 text-slate-300">
+        We are especially grateful to our sponsors for making this event possible.
+      </p>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {["Sponsor A", "Sponsor B", "Sponsor C", "Sponsor D", "Sponsor E"].map((s) => (
+          <div class="flex h-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[0.7rem] uppercase tracking-widest text-slate-500">{s}</div>
+        ))}
+      </div>
+      <p class="mt-4 text-center text-xs text-slate-500">
+        Interested in sponsoring?
+        <a href="mailto:tlove@iri.upc.edu" class="text-orange-300 hover:text-orange-200 transition-colors">Get in touch</a>
+      </p>
+    </div>
+
+    <!-- About Us -->
+    <div class="reveal mb-3">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">About Us</p>
+      <h2 class="text-2xl font-bold text-white">Who we are</h2>
+    </div>
+
+    <div class="reveal panel rounded-3xl p-6 mb-8">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <p class="text-[0.95rem] leading-7 text-slate-300">
+          The word <strong class="text-white">&ldquo;Akili&rdquo;</strong> comes from Swahili and means
+          <em>mind, wisdom, intelligence or ingenuity</em>. It represents the collective wisdom, critical
+          thinking and problem solving of African researchers, practitioners, teachers and students. We also
+          embrace &ldquo;Akili&rdquo; as a symbol of the artificial mind which we design, create and embed in
+          robots. This dual meaning lies at the heart of our community. By bringing together the many minds of
+          Africans working in robotics, across borders, disciplines and generations, we can shape a strong and
+          inclusive ecosystem on the continent and build better robot minds.
+        </p>
+      </div>
+
+      <p class="mt-5 text-[0.95rem] leading-7 text-slate-300">
+        <strong class="text-white">Akili African Robotics Community (AARC)</strong> is a network of African
+        roboticists seeking to bring together robotics practitioners from across the continent and beyond to
+        create a shared space for collaboration, knowledge exchange and mutual support. AARC exists to connect
+        people who might otherwise work in isolation and to amplify African voices and innovations in the
+        global robotics community.
+      </p>
+      <p class="mt-3 text-[0.95rem] leading-7 text-slate-300">
+        The world is experiencing a rapid rise in interest and expertise in machine learning, artificial
+        intelligence, and robotics, and Africa is no different. Initiatives such as the Deep Learning Indaba
+        demonstrate the strength, talent, and momentum of African researchers and practitioners in AI and
+        related fields. Across universities, startups, research labs, and innovation hubs, new communities are
+        forming and producing world-class work. Robotics is a natural next frontier for this growing ecosystem.
+      </p>
+      <p class="mt-3 text-[0.95rem] leading-7 text-slate-300">
+        Despite this progress, significant gaps remain. Many aspiring roboticists still face limited access to
+        hardware, software, funding, training, and research opportunities. At the same time, there is a lack of
+        connectivity between individuals and groups working on robotics across the continent, making
+        collaboration, mentorship, and shared learning more difficult than they should be. AARC exists to help
+        close these gaps.
+      </p>
+
+      <div class="mt-5 rounded-2xl border border-orange-400/15 bg-orange-400/5 p-4">
+        <p class="mb-2.5 text-sm font-semibold text-orange-200">Our Mission</p>
+        <ul class="space-y-1.5 text-sm leading-6 text-slate-300">
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><span><strong class="text-white">Promote access</strong> to robots, tools, software, and learning resources for researchers, practitioners and students in Africa.</span></li>
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><span><strong class="text-white">Foster collaboration</strong> between African roboticists, as well as between academia, industry, and innovation hubs.</span></li>
+          <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span><span><strong class="text-white">Educate and inspire</strong> future generations through workshops, research stays, outreach programs, and community-led events at all levels &mdash; from schools to universities and beyond.</span></li>
+        </ul>
+      </div>
+
+      <p class="mt-5 text-[0.95rem] leading-7 text-slate-300">
+        Through Akili, we aim to build a connected, empowered, and globally visible African robotics community
+        which uses shared knowledge and collective &ldquo;mind&rdquo; to solve local and global challenges.
+      </p>
+    </div>
+
+    <!-- Previous Editions -->
+    <div class="reveal mb-3">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">History</p>
+      <h2 class="text-2xl font-bold text-white">Previous Editions</h2>
+    </div>
+
+    <div class="reveal panel rounded-3xl p-6 mb-8">
+      <ul class="flex flex-col gap-2.5">
+        {previousEditions.map((edition) => (
+          <li>
+            <a href={edition.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-cyan-200 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              {edition.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
 
-    <p style="color: #b0c0de; line-height: 1.8; margin-bottom: 1rem;">
-      Through Akili, we aim to build a connected, empowered, and globally visible African robotics community which uses shared knowledge and collective "mind" to solve local and global challenges.
-    </p>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- PREVIOUS EVENTS -->
-<div class="section reveal">
-  <p class="section-label">History</p>
-  <h2 class="section-title">Previous Editions</h2>
-  <div class="panel">
-    <ul class="prev-events-list">
-      <li>
-        <a href="https://sites.google.com/view/robot-learning-for-africa-2025/home" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          Rwanda 2025
-        </a>
-      </li>
-      <li>
-        <a href="https://sites.google.com/view/robotlearning4africa-2024" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          Senegal 2024
-        </a>
-      </li>
-      <li>
-        <a href="https://sites.google.com/view/robotlearning4africa" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          Ghana 2023
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="section reveal">
-  <div class="cta-panel">
-    <p class="eyebrow">Stay in the loop</p>
-    <h2>Be part of our community!</h2>
-    <p>Join our Discord to keep updated about announcements and programme updates, and to be part of a vibrant African robotics community.</p>
-    <div class="btn-row" style="justify-content:center;">
-      <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="btn-primary">Join our Discord &rarr;</a>
-      <a href="/" class="btn-secondary">Back to home</a>
+    <!-- Closing CTA -->
+    <div class="reveal panel orange-glow rounded-[2rem] p-8 text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.24em] text-orange-300/90">Stay in the loop</p>
+      <h2 class="mt-2 text-2xl md:text-3xl font-bold text-white">Be part of our community!</h2>
+      <p class="mt-3 max-w-xl mx-auto text-[0.95rem] text-slate-300 leading-7">
+        Join our Discord to keep updated about announcements and programme updates, and to be part of a vibrant
+        African robotics community.
+      </p>
+      <div class="mt-5 flex flex-wrap justify-center gap-4">
+        <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="primary-btn">Join our Discord</a>
+        <a href="/" class="secondary-btn">Back to home</a>
+      </div>
     </div>
-  </div>
-</div>
 
-<footer>
-  <p>&copy; 2026 Workshop on Robotics and Automation in Africa &middot; Lagos, Nigeria</p>
-  <p style="margin-top: 0.4rem;">Robotics &middot; AI &middot; Research &middot; Africa</p>
-</footer>
+  </main>
 
-<script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-</body>
-</html>
+  <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-500">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <p>&copy; 2026 Akili African Robotics Community</p>
+      <p>Robotics &middot; AI &middot; Research &middot; Africa</p>
+    </div>
+  </footer>
+</BaseLayout>
