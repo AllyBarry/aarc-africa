@@ -1,13 +1,74 @@
-<nav
-  data-nav
-  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300"
->
-  <div class="mx-auto flex max-w-7xl items-center justify-around px-6 py-4 lg:px-8">
-    <div class="hidden items-center gap-12 text-sm text-slate-300 md:flex">
-      <a href="#about" class="rounded-lg px-3 py-2 transition hover:bg-white/10 hover:text-white">About</a>
-      <a href="#events" class="rounded-lg px-3 py-2 transition hover:bg-white/10 hover:text-white">Events</a>
-      <a href="#network" class="rounded-lg px-3 py-2 transition hover:bg-white/10 hover:text-white">Network</a>
-      <a href="#join" class="rounded-lg px-3 py-2 transition hover:bg-white/10 hover:text-white">Join</a>
+---
+const links = [
+  { label: "About", href: "/#about" },
+  { label: "Events", href: "/#events" },
+  { label: "Network", href: "/#network" },
+  { label: "Committee", href: "/#committee" },
+  { label: "Charter", href: "/charter" },
+];
+---
+
+<nav data-nav class="nav fixed inset-x-0 top-0 z-50 transition-all duration-300">
+  <div class="mx-auto flex max-w-7xl items-center justify-end px-5 py-3 md:justify-center lg:px-8">
+    <!-- Desktop links -->
+    <div class="hidden items-center gap-1 md:flex">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/8 hover:text-white"
+        >
+          {l.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile toggle -->
+    <button
+      id="menu-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white md:hidden"
+    >
+      <svg class="menu-open h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="menu-close hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div id="mobile-menu" class="hidden border-t border-white/8 bg-[#0b0b0e]/95 backdrop-blur-xl md:hidden">
+    <div class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
+      {links.map((l) => (
+        <a href={l.href} class="rounded-xl px-4 py-3 text-base font-medium text-slate-200 transition-colors hover:bg-white/8 hover:text-white">{l.label}</a>
+      ))}
     </div>
   </div>
 </nav>
+
+<style>
+  .nav { border-bottom: 1px solid transparent; }
+  .nav.nav-scrolled {
+    background: rgba(10, 10, 12, 0.72);
+    backdrop-filter: blur(18px) saturate(1.2);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    if (!btn || !menu) return;
+    const open = btn.querySelector(".menu-open");
+    const close = btn.querySelector(".menu-close");
+    const setOpen = (isOpen) => {
+      menu.classList.toggle("hidden", !isOpen);
+      open?.classList.toggle("hidden", isOpen);
+      close?.classList.toggle("hidden", !isOpen);
+      btn.setAttribute("aria-expanded", String(isOpen));
+      btn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    };
+    btn.addEventListener("click", () => setOpen(menu.classList.contains("hidden")));
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+  })();
+</script>

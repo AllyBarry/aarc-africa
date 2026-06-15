@@ -4,33 +4,40 @@ interface Props {
   text: string;
   tags: string[];
   buttonUrl?: string;
+  badge?: string;
+  date?: string;
 }
-const { title, text, tags, buttonUrl } = Astro.props;
+const { title, text, tags, buttonUrl, badge, date } = Astro.props;
+const isExternal = !!buttonUrl && /^https?:\/\//.test(buttonUrl);
+const cta = isExternal ? "Visit website" : "Learn more";
 ---
 
-<article class="project-card panel rounded-3xl p-6">
-  <div class="mb-4 inline-flex rounded-full border border-orange-400/20 bg-orange-400/10 px-3 py-1 text-xs font-medium text-orange-200">
-    Robotics + AI
+<article class="project-card panel card-hover flex h-full flex-col rounded-3xl p-6">
+  <div class="flex items-center justify-between gap-3">
+    <span class="chip">{badge ?? tags[0] ?? "Event"}</span>
+    {date && <span class="text-xs font-medium uppercase tracking-wider text-slate-500">{date}</span>}
   </div>
-  <h3 class="text-xl font-semibold text-white">{title}</h3>
+
+  <h3 class="mt-5 text-xl font-semibold leading-snug text-white">{title}</h3>
   <p class="mt-3 text-sm leading-7 text-slate-400">{text}</p>
 
-  <div class="mt-6 flex flex-wrap gap-2">
+  <div class="mt-5 flex flex-wrap gap-2">
     {tags.map((tag) => (
-      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-        {tag}
-      </span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">{tag}</span>
     ))}
   </div>
 
   {buttonUrl && (
     <a
       href={buttonUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mt-6 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-gradient-to-r from-orange-500/20 to-amber-400/20 px-4 py-2 text-sm font-medium text-amber-300 transition-all hover:border-amber-400/70 hover:from-orange-500/30 hover:to-amber-400/30 hover:text-amber-200"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      class="group/cta mt-6 inline-flex items-center gap-2 self-start text-sm font-semibold text-orange-200 transition-colors hover:text-orange-100"
     >
-      Visit Website
+      {cta}
+      <svg class="h-4 w-4 transition-transform duration-300 group-hover/cta:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+      </svg>
     </a>
   )}
 </article>

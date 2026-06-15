@@ -1,127 +1,99 @@
+---
+const discord = "https://discord.gg/pvXMR8vcpV";
+---
+
 <section
   id="top"
-  class="circuit-overlay grid-overlay relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-28"
+  class="relative flex min-h-screen flex-col justify-center overflow-hidden pt-28 pb-20"
 >
-  <div class="africa-mask"></div>
+  <!-- Texture -->
+  <div class="grid-overlay absolute inset-0" aria-hidden="true"></div>
 
   <div class="binary-fall" aria-hidden="true">
-    <div class="binary-column left-[8%]" style="animation-duration: 16s;">
-      010101 101001 001101 101010 111000 001011 010110
-    </div>
-    <div class="binary-column left-[28%]" style="animation-duration: 18s;">
-      001101 110010 010101 001100 101010 010011 111001
-    </div>
-    <div class="binary-column left-[52%]" style="animation-duration: 14s;">
-      101010 001001 111000 010101 101110 001011 100101
-    </div>
-    <div class="binary-column left-[76%]" style="animation-duration: 17s;">
-      010101 110101 001011 111001 010010 101100 001111
-    </div>
+    <div class="binary-column left-[8%]" style="animation-duration:16s">010101 101001 001101 101010 111000 001011 010110</div>
+    <div class="binary-column left-[30%]" style="animation-duration:19s">001101 110010 010101 001100 101010 010011 111001</div>
+    <div class="binary-column left-[58%]" style="animation-duration:14s">101010 001001 111000 010101 101110 001011 100101</div>
+    <div class="binary-column left-[80%]" style="animation-duration:17s">010101 110101 001011 111001 010010 101100 001111</div>
   </div>
 
-  <div class="pointer-events-none absolute inset-0">
-    <div class="glow-line left-[12%] top-[35%] h-[3px] w-[26%] rotate-[8deg]">
-    </div>
-    <div
-      class="glow-line right-[10%] top-[31%] h-[3px] w-[28%] -rotate-[22deg]"
-    >
-    </div>
-    <div class="vertical-energy absolute left-1/2 top-[52%] h-[38%]"></div>
-    <div
-      class="absolute left-[50%] top-[43%] h-4 w-4 -translate-x-1/2 rounded-full bg-orange-300 shadow-[0_0_30px_rgba(255,122,26,0.9)]"
-    >
-    </div>
+  <!-- The spark -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="glow-line left-[10%] top-[34%] w-[24%] rotate-[8deg]"></div>
+    <div class="glow-line right-[8%] top-[30%] w-[26%] -rotate-[20deg]"></div>
+    <div class="vertical-energy absolute left-[58%] top-[50%] h-[34%]"></div>
   </div>
 
-  <div
-    class="relative mx-auto grid w-full max-w-7xl items-center gap-8 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8"
-  >
-    <div class="reveal max-w-3x grid gap-6">
-      <div>
-        <div
-          class="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300"
-        >
-          <span
-            class="h-2 w-2 rounded-full bg-orange-300 shadow-[0_0_14px_rgba(255,122,26,0.9)]"
-          ></span>
-          <span><em>Akili</em> — Swahili for <em>intelligence</em></span>
-        </div>
+  <div class="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-6 lg:grid-cols-[1.12fr_0.88fr] lg:px-8">
+    <!-- Copy -->
+    <div>
+      <div class="rise inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 backdrop-blur" style="animation-delay:.05s">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-orange-400"></span>
+        </span>
+        <span><em class="not-italic font-semibold text-orange-200">Akili</em> — Swahili for <em class="not-italic font-semibold text-white">intelligence</em></span>
       </div>
-      <div>
-        <h1 class="nasal-hero text-gradient text-6xl md:text-8xl lg:text-9xl">
-          AARC
-        </h1>
-        <p class="mt-1 text-base font-thin text-slate-500 md:text-3xl">
-          Akili African Robotics Community
-        </p>
-      </div>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
+
+      <h1 class="rise nasal-hero mt-7 text-[5.5rem] leading-[0.9] text-spark-gradient sm:text-[7rem] lg:text-[9rem]" style="animation-delay:.12s">
+        AARC
+      </h1>
+      <p class="rise mt-2 text-xl font-medium text-slate-400 sm:text-2xl md:text-3xl" style="animation-delay:.2s">
+        Akili African Robotics Community
+      </p>
+
+      <p class="rise mt-7 max-w-xl text-lg leading-8 text-slate-300" style="animation-delay:.28s">
         A network of African roboticists connecting practitioners across the
         continent and beyond — fostering collaboration, knowledge exchange,
         and mutual support to amplify African voices in global robotics.
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-4">
+      <div class="rise mt-9 flex flex-wrap gap-4" style="animation-delay:.36s">
         <a href="#events" class="primary-btn">Explore Events</a>
-        <a href="#join" class="secondary-btn">Join the Community</a>
+        <a href={discord} target="_blank" rel="noopener noreferrer" class="secondary-btn">Join the Community</a>
       </div>
 
-      <!-- <div class="mt-10 grid max-w-2xl grid-cols-2 gap-4 md:grid-cols-4">
-        <div class="panel rounded-2xl p-4 orange-glow">
-          <div class="text-2xl font-bold text-white">21+</div>
-          <div class="mt-1 text-sm text-slate-400">Countries reached</div>
-        </div>
-        <div class="panel rounded-2xl p-4">
-          <div class="text-2xl font-bold text-white">50+</div>
-          <div class="mt-1 text-sm text-slate-400">Workshop attendees</div>
-        </div>
-        <div class="panel rounded-2xl p-4">
-          <div class="text-2xl font-bold text-white">3</div>
-          <div class="mt-1 text-sm text-slate-400">Workshops held</div>
-        </div>
-      </div> -->
+      <div class="rise mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-500" style="animation-delay:.44s">
+        <span class="flex items-baseline gap-2"><span class="text-2xl font-bold text-orange-300">21+</span> countries</span>
+        <span class="hidden h-4 w-px bg-white/10 sm:block"></span>
+        <span class="flex items-baseline gap-2"><span class="text-2xl font-bold text-orange-300">3</span> annual workshops</span>
+        <span class="hidden h-4 w-px bg-white/10 sm:block"></span>
+        <span class="flex items-baseline gap-2"><span class="text-2xl font-bold text-orange-300">50+</span> researchers</span>
+      </div>
     </div>
 
-    <div class="reveal relative lg:pl-16">
-      <div class="panel orange-glow relative rounded-[2rem] p-5">
-        <div
-          class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-orange-400/10 via-transparent to-cyan-300/10"
-        >
-        </div>
+    <!-- Logo showcase -->
+    <div class="rise relative lg:pl-10" style="animation-delay:.3s">
+      <div class="panel panel-lit orange-glow relative rounded-[2rem] p-4">
+        <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-orange-400/12 via-transparent to-cyan-300/10"></div>
 
-        <div
-          class="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0d141d]"
-        >
+        <div class="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#0c0c10]">
           <img
-            src="/images/aarc-logo-square.png"
-            alt="Akili African Robotics Community logo"
-            class="h-full w-full object-cover opacity-90"
+            src="/images/aarc-logo.png"
+            alt="Two robotic arms reaching across a map of Africa, joined by a spark of energy"
+            class="h-full w-full object-cover"
           />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#0b0f14]/80 via-transparent to-transparent"
-          >
-          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent"></div>
         </div>
 
-        <div class="relative mt-5 grid grid-cols-2 gap-4">
+        <div class="relative mt-4 grid grid-cols-2 gap-3">
           <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <div class="text-xs uppercase tracking-[0.22em] text-slate-400">
-              Mission
-            </div>
-            <div class="mt-2 text-sm font-semibold leading-6 text-white">
-              Access · Collaboration · Education
-            </div>
+            <div class="text-[0.65rem] uppercase tracking-[0.22em] text-slate-400">Mission</div>
+            <div class="mt-2 text-sm font-semibold leading-6 text-white">Access · Collaboration · Education</div>
           </div>
           <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <div class="text-xs uppercase tracking-[0.22em] text-slate-400">
-              Rooted in
-            </div>
-            <div class="mt-2 text-sm font-semibold leading-6 text-white">
-              African intelligence &amp; innovation
-            </div>
+            <div class="text-[0.65rem] uppercase tracking-[0.22em] text-slate-400">Rooted in</div>
+            <div class="mt-2 text-sm font-semibold leading-6 text-white">African intelligence &amp; innovation</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Scroll cue -->
+  <a href="#about" aria-label="Scroll to content" class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-slate-500 transition-colors hover:text-orange-200 lg:flex">
+    <span class="text-[0.65rem] uppercase tracking-[0.3em]">Scroll</span>
+    <span class="flex h-9 w-5 justify-center rounded-full border border-white/15 pt-1.5">
+      <span class="h-2 w-1 animate-bounce rounded-full bg-orange-300"></span>
+    </span>
+  </a>
 </section>

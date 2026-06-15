@@ -1,0 +1,100 @@
+---
+// A stylised "connected continent": faint Africa silhouette + glowing hub nodes
+// at cities where AARC has gathered, joined by animated spark-arcs.
+// Hub positions and the coastline are placed with the same equirectangular
+// projection (lon −18°…52° → x, lat 38°N…−35°S → y) so the geography stays
+// consistent: lon → x = 20 + (lon+18)*4.428, lat → y = 30 + (38−lat)*5.068.
+const hubs = [
+  { id: "dakar", label: "Dakar", x: 26, y: 150 },
+  { id: "accra", label: "Accra", x: 100, y: 192, labelEnd: true },
+  { id: "lagos", label: "Lagos", x: 116, y: 189 },
+  { id: "kigali", label: "Kigali", x: 232, y: 233 },
+  { id: "joburg", label: "Johannesburg", x: 223, y: 352, primary: true },
+];
+const byId = Object.fromEntries(hubs.map((h) => [h.id, h]));
+const links: [string, string][] = [
+  ["dakar", "accra"], ["accra", "lagos"], ["lagos", "kigali"],
+  ["lagos", "joburg"], ["kigali", "joburg"],
+];
+// Coastline traced clockwise from NW Morocco — Mediterranean, Red Sea, the Horn,
+// the East coast, the Cape, then up the Atlantic past the Gulf of Guinea and the
+// West African bulge to Dakar (the westernmost point) and back north.
+const outline = "M74,41 L113,35 L148,34 L157,56 L179,69 L188,60 L206,60 L232,64 L241,64 L244,71 L255,101 L265,123 L275,144 L292,159 L299,167 L327,163 L300,212 L288,225 L276,243 L274,257 L279,277 L254,323 L244,354 L237,374 L213,395 L188,399 L181,395 L164,339 L152,310 L158,267 L154,253 L141,221 L143,202 L126,201 L113,190 L100,195 L82,196 L66,200 L41,180 L31,163 L22,148 L29,131 L29,102 L57,69 L66,52 Z";
+---
+
+<div class="africa-net relative w-full">
+  <svg viewBox="0 0 352 416" class="h-auto w-full" role="img" aria-label="Map of Africa with a network of connected robotics hubs">
+    <defs>
+      <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ff8a3c" stop-opacity="0.14" />
+        <stop offset="100%" stop-color="#2fd4ff" stop-opacity="0.06" />
+      </linearGradient>
+      <linearGradient id="arc" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ff6a1a" stop-opacity="0" />
+        <stop offset="50%" stop-color="#ffb24d" stop-opacity="0.9" />
+        <stop offset="100%" stop-color="#ff6a1a" stop-opacity="0" />
+      </linearGradient>
+      <radialGradient id="halo">
+        <stop offset="0%" stop-color="#ffb24d" stop-opacity="0.6" />
+        <stop offset="100%" stop-color="#ffb24d" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+
+    <!-- Continent silhouette -->
+    <path d={outline} fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" />
+    <path d={outline} fill="url(#land)" stroke="rgba(255,178,77,0.4)" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- Connection arcs -->
+    {links.map(([a, b], i) => {
+      const p = byId[a], q = byId[b];
+      return (
+        <line
+          x1={p.x} y1={p.y} x2={q.x} y2={q.y}
+          stroke="url(#arc)" stroke-width="1.4"
+          class="net-link" style={`--i:${i}`}
+        />
+      );
+    })}
+
+    <!-- Hub nodes -->
+    {hubs.map((h, i) => {
+      const labelEnd = h.labelEnd ?? h.x > 250;
+      return (
+        <g class="net-hub" style={`--i:${i}`}>
+          <circle cx={h.x} cy={h.y} r={h.primary ? 18 : 12} fill="url(#halo)" class="net-halo" />
+          <circle cx={h.x} cy={h.y} r={h.primary ? 4.5 : 3} fill={h.primary ? "#ffce8a" : "#ffb24d"} />
+          <circle cx={h.x} cy={h.y} r={h.primary ? 4.5 : 3} fill="none" stroke="#ffb24d" stroke-width="1" class="net-ping" />
+          <text x={h.x + (labelEnd ? -8 : 8)} y={h.y + 3} text-anchor={labelEnd ? "end" : "start"}
+            class="net-label" fill={h.primary ? "#ffd9ad" : "rgba(243,240,234,0.7)"}>{h.label}</text>
+        </g>
+      );
+    })}
+  </svg>
+</div>
+
+<style>
+  .net-label {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .net-link {
+    stroke-dasharray: 6 10;
+    animation: dashFlow 3s linear infinite;
+    animation-delay: calc(var(--i) * -0.4s);
+    filter: drop-shadow(0 0 3px rgba(255, 122, 26, 0.5));
+  }
+  .net-halo { animation: haloPulse 4s ease-in-out infinite; animation-delay: calc(var(--i) * 0.5s); }
+  .net-ping { transform-box: fill-box; transform-origin: center; animation: pingRing 3.4s ease-out infinite; animation-delay: calc(var(--i) * 0.6s); }
+
+  @keyframes dashFlow { to { stroke-dashoffset: -32; } }
+  @keyframes haloPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+  @keyframes pingRing {
+    0% { transform: scale(1); opacity: 0.9; }
+    70%, 100% { transform: scale(3.4); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .net-link, .net-halo, .net-ping { animation: none; }
+  }
+</style>

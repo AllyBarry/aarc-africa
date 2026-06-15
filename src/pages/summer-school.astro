@@ -6,9 +6,10 @@ import EventNav from "../components/EventNav.astro";
 <BaseLayout
   title="Summer School - AARC"
   description="The AARC Summer School on Robotics and Automation in Africa - promoting robotics education and research across the continent."
+  hideNav
 >
 
-  <main class="mx-auto max-w-6xl px-6 pt-12 pb-24 lg:px-8">
+  <main class="mx-auto max-w-6xl px-6 pt-12 pb-12 lg:px-8">
 
     <!-- Header -->
     <div class="reveal mb-16">
@@ -27,27 +28,27 @@ import EventNav from "../components/EventNav.astro";
           ]}
         />
       </div>
-      <p class="mb-6 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Summer School 2027</p>
-      <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight"><span class="nasal-title">AARC</span> Summer School</h1>
-      <p class="mb-8 text-2xl md:text-4xl font-semibold text-slate-300 leading-snug">on Robotics &amp; Automation in Africa</p>
-      <p class="max-w-2xl text-lg leading-8 text-slate-400">
+      <p class="mb-6 eyebrow">Summer School 2027</p>
+      <h1 class="text-4xl md:text-6xl text-white leading-[1.05]"><span class="brand-type text-spark-gradient">AARC</span> Summer School</h1>
+      <p class="mb-8 mt-3 text-xl md:text-2xl font-semibold text-slate-300 leading-snug">on Robotics &amp; Automation in Africa</p>
+      <p class="max-w-2xl text-base leading-7 text-slate-400">
         An initiative to promote robotics education and research in South Africa and across the continent -
         filling a critical gap for early-stage robotics researchers.
       </p>
     </div>
 
     <!-- About -->
-    <div id="about" class="reveal scroll-mt-24 panel rounded-3xl p-8 mb-10">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">About</p>
-      <h2 class="mt-2 text-2xl font-bold text-white">About the Initiative</h2>
-      <p class="mt-4 leading-8 text-slate-300">
+    <div id="about" class="reveal scroll-mt-24 panel rounded-3xl p-6 mb-10">
+      <p class="mb-1 eyebrow">About</p>
+      <h2 class="mt-2 text-xl font-bold text-white">About the Initiative</h2>
+      <p class="mt-4 text-sm leading-6 text-slate-300">
         The field of robotics is steadily growing in South Africa, which is home to some of the largest
         robotics and machine learning labs in Africa. Despite this, there are currently no active summer
         schools aimed at early-stage robotics researchers. The AARC Summer School is poised to fill this
         important gap - bringing together graduate students, researchers, and practitioners for an intensive
         programme of keynotes, tutorials, and hands-on sessions.
       </p>
-      <p class="mt-4 leading-8 text-slate-300">
+      <p class="mt-4 text-sm leading-6 text-slate-300">
         The school will take place in <strong class="text-white">August/September 2027</strong>. We aim to
         co-locate with the <strong class="text-white">Deep Learning Indaba</strong>, with whom the organising
         committee has an existing relationship and which is expected to take place in South Africa next year.
@@ -68,14 +69,14 @@ import EventNav from "../components/EventNav.astro";
 
     <!-- Areas of Interest -->
     <div id="topics" class="reveal scroll-mt-24 mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Areas of Interest</p>
-      <h2 class="text-3xl font-bold text-white">What to expect</h2>
-      <p class="mt-4 leading-8 text-slate-400">
+      <p class="mb-3 eyebrow">Areas of Interest</p>
+      <h2 class="text-2xl font-bold text-white">What to expect</h2>
+      <p class="mt-4 text-sm leading-6 text-slate-400">
         The summer school will cover foundational and cutting-edge areas in robotics and automation. Exact topics and session details will be confirmed as the programme is finalized.
       </p>
     </div>
 
-    <div class="reveal panel rounded-3xl p-8 mb-10">
+    <div class="reveal panel rounded-3xl p-6 mb-10">
       <div class="grid gap-4 sm:grid-cols-2">
         <div class="flex gap-3">
           <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400"></span>
@@ -138,9 +139,9 @@ import EventNav from "../components/EventNav.astro";
 
     <!-- Programme Schedule -->
     <div id="schedule" class="reveal scroll-mt-24 mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Programme & Schedule</p>
-      <h2 class="text-3xl font-bold text-white">Three-day agenda</h2>
-      <p class="mt-4 leading-8 text-slate-400">
+      <p class="mb-3 eyebrow">Programme & Schedule</p>
+      <h2 class="text-2xl font-bold text-white">Three-day agenda</h2>
+      <p class="mt-4 text-sm leading-6 text-slate-400">
         The programme features keynote lectures, hands-on sessions, panel discussions, and networking opportunities. Daily sessions run from 08:30 to 17:00. This schedule is tentative and subject to change.
       </p>
     </div>
@@ -234,16 +235,16 @@ import EventNav from "../components/EventNav.astro";
 
     <!-- Potential Speakers -->
     <div id="speakers" class="reveal scroll-mt-24 mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Speakers</p>
-      <h2 class="text-3xl font-bold text-white">Potential Speakers</h2>
-      <p class="mt-4 leading-8 text-slate-400">
+      <p class="mb-3 eyebrow">Speakers</p>
+      <h2 class="text-2xl font-bold text-white">Potential Speakers</h2>
+      <p class="mt-4 text-sm leading-6 text-slate-400">
         The school will feature 8 keynote talks and a panel session. The tentative list of speakers is as follows.
       </p>
     </div>
 
     <div class="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="/images/people/amir.jpg" alt="Amir Patel" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Amir Patel</div>
@@ -254,7 +255,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="https://cifar.ca/wp-content/uploads/2022/06/Benjamin-Rosman-.jpg" alt="Benjamin Rosman" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Benjamin Rosman</div>
@@ -265,7 +266,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="/images/people/david.jpg" alt="David Vernon" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">David Vernon</div>
@@ -276,7 +277,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="https://cs.brown.edu/people/gdk/images/gdk-photo3.jpg" alt="George Konidaris" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">George Konidaris</div>
@@ -287,7 +288,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="https://africanroboticsunit.com/wp-content/uploads/2024/10/paulamayo.jpg" alt="Paul Amayo" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Paul Amayo</div>
@@ -298,7 +299,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="https://www.raillab.org/author/pravesh-ranchod/avatar_hua31b2412db95e26580ae27fdabc849c6_1812768_270x270_fill_q75_lanczos_center.jpg" alt="Pravesh Ranchod" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Pravesh Ranchod</div>
@@ -309,7 +310,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="/images/people/riaan.jpg" alt="Riaan Stopforth" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Riaan Stopforth</div>
@@ -320,7 +321,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="https://www.raillab.org/author/steven-james/avatar_hud4d5d3cadb472fb09d290f604ae02aa9_27870_270x270_fill_lanczos_center_3.png" alt="Steven James" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Steven James</div>
@@ -331,7 +332,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="https://benedictquartey.github.io/assets/images/profile.jpg" alt="Benedict Quartey" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Benedict Quartey</div>
@@ -342,7 +343,7 @@ import EventNav from "../components/EventNav.astro";
         </div>
       </div>
 
-      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-8 text-center">
+      <div class="panel flex flex-col items-center gap-4 rounded-3xl p-6 text-center">
         <img src="https://www.raillab.org/author/branden-ingram/avatar_hu9cdac0a1ebb0ff79c33cf7ccee12cb20_52277_270x270_fill_q75_lanczos_center.jpg" alt="Branden Ingram" class="h-20 w-20 rounded-full object-cover" />
         <div>
           <div class="text-base font-semibold text-white">Branden Ingram</div>
@@ -355,7 +356,7 @@ import EventNav from "../components/EventNav.astro";
 
     </div>
 
-    <div class="reveal panel rounded-3xl p-8 mb-16">
+    <div class="reveal panel rounded-3xl p-6 mb-16">
       <p class="text-sm leading-7 text-slate-400">
         Additional keynote speakers and tutorial leads will be announced as the programme is finalised.
         If you are interested in speaking or leading a session, please reach out via our Discord or email.
@@ -364,9 +365,9 @@ import EventNav from "../components/EventNav.astro";
 
     <!-- Organising Committee -->
     <div id="committee" class="reveal scroll-mt-24 mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Organising Committee</p>
-      <h2 class="text-3xl font-bold text-white">The team making it happen</h2>
-      <p class="mt-4 leading-8 text-slate-400">
+      <p class="mb-3 eyebrow">Organising Committee</p>
+      <h2 class="text-2xl font-bold text-white">The team making it happen</h2>
+      <p class="mt-4 text-sm leading-6 text-slate-400">
         The summer school is being organized by dedicated researchers and community builders committed to advancing robotics education and research across Africa.
       </p>
     </div>
@@ -562,7 +563,7 @@ import EventNav from "../components/EventNav.astro";
 
     <!-- Closing CTA -->
     <div class="reveal panel orange-glow rounded-[2rem] p-8 text-center">
-      <h2 class="text-2xl font-bold text-white">Interested in attending or contributing?</h2>
+      <h2 class="text-xl font-bold text-white">Interested in attending or contributing?</h2>
       <p class="mt-3 text-slate-300">Join our community to stay updated on applications, speaker announcements, and more.</p>
       <div class="mt-6 flex flex-wrap justify-center gap-4">
         <a href="https://discord.gg/pvXMR8vcpV" target="_blank" rel="noopener noreferrer" class="primary-btn">Join our Discord</a>
@@ -572,10 +573,4 @@ import EventNav from "../components/EventNav.astro";
 
   </main>
 
-  <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-500">
-    <div class="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-      <p>&copy; 2026 Akili African Robotics Community</p>
-      <p>Robotics &middot; AI &middot; Research &middot; Africa</p>
-    </div>
-  </footer>
 </BaseLayout>

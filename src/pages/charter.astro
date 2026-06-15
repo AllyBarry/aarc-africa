@@ -1,15 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Navbar from "../components/Navbar.astro";
 ---
 
 <BaseLayout
   title="Community Charter — AARC"
   description="The values, mission, and foundation of the Akili African Robotics Community."
 >
-  <Navbar />
-
-  <main class="mx-auto max-w-4xl px-6 py-24 lg:px-8">
+  <main class="mx-auto max-w-4xl px-6 pt-32 pb-12 lg:px-8">
 
     <!-- Header -->
     <div class="reveal mb-16">
@@ -17,9 +14,9 @@ import Navbar from "../components/Navbar.astro";
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         Back to home
       </a>
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Community Charter</p>
-      <h1 class="nasal-title text-4xl text-white md:text-5xl">AARC Values &amp; Mission</h1>
-      <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-400">
+      <p class="eyebrow mb-4">Community Charter</p>
+      <h1 class="text-4xl text-spark-gradient md:text-6xl">AARC Values &amp; Mission</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
         The Akili African Robotics Community is a network of African roboticists seeking to bring together
         practitioners from across the continent and beyond — creating a shared space for collaboration,
         knowledge exchange, and mutual support.
@@ -28,7 +25,7 @@ import Navbar from "../components/Navbar.astro";
 
     <!-- Mission -->
     <div class="reveal panel rounded-3xl p-8 mb-10">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">Our Mission</p>
+      <p class="mb-1 eyebrow">Our Mission</p>
       <h2 class="mt-2 text-2xl font-bold text-white">Why AARC exists</h2>
       <p class="mt-4 leading-8 text-slate-300">
         The world is experiencing a rapid rise in interest and expertise in machine learning, artificial
@@ -59,7 +56,7 @@ import Navbar from "../components/Navbar.astro";
 
     <!-- Values -->
     <div class="reveal mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Our Values</p>
+      <p class="mb-3 eyebrow">Our Values</p>
       <h2 class="text-3xl font-bold text-white">Three core pillars</h2>
     </div>
 
@@ -124,7 +121,7 @@ import Navbar from "../components/Navbar.astro";
 
     <!-- Foundation -->
     <div class="reveal panel rounded-3xl p-8 mb-16">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-orange-300/80">History</p>
+      <p class="mb-1 eyebrow">History</p>
       <h2 class="mt-2 text-2xl font-bold text-white">Foundation of the Organisation</h2>
       <p class="mt-4 leading-8 text-slate-300">
         The AARC began as a committee invested in developing robotics workshops and events for the
@@ -145,7 +142,7 @@ import Navbar from "../components/Navbar.astro";
 
     <!-- Organisational Partnerships -->
     <div class="reveal mb-4">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-orange-300/90">Organisational Partnerships</p>
+      <p class="mb-3 eyebrow">Organisational Partnerships</p>
       <h2 class="text-3xl font-bold text-white">Our Partners</h2>
       <p class="mt-4 leading-8 text-slate-400">
         AARC is supported by world-class research institutions committed to advancing robotics and AI on the African continent.
@@ -187,11 +184,4 @@ import Navbar from "../components/Navbar.astro";
     </div>
 
   </main>
-
-  <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-500">
-    <div class="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-      <p>© 2026 Akili African Robotics Community</p>
-      <p>Robotics · AI · Research · Africa</p>
-    </div>
-  </footer>
 </BaseLayout>
