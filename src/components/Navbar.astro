@@ -43,6 +43,34 @@ const links = [
       ))}
     </div>
   </div>
+
+  <script>
+    const root = document.querySelector("[data-events-menu]");
+    const toggle = document.getElementById("events-toggle");
+    const menu = document.getElementById("events-menu");
+    const caret = toggle?.querySelector("svg");
+
+    function closeMenu() {
+      menu?.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+      caret?.classList.remove("rotate-180");
+    }
+
+    toggle?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = menu?.classList.toggle("hidden") === false;
+      toggle.setAttribute("aria-expanded", String(open));
+      caret?.classList.toggle("rotate-180", open);
+    });
+
+    menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+    document.addEventListener("click", (e) => {
+      if (!root?.contains(e.target as Node)) closeMenu();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  </script>
 </nav>
 
 <style>
