@@ -1,7 +1,14 @@
 ---
 const links = [
   { label: "About", href: "/#about" },
-  { label: "Events", href: "/#events" },
+  {
+    label: "Events",
+    href: "/#events",
+    children: [
+      { label: "Events & Workshops", href: "/#events" },
+      { label: "Webinars", href: "/webinars" },
+    ],
+  },
   { label: "Network", href: "/#network" },
   { label: "Committee", href: "/#committee" },
   { label: "Charter", href: "/charter" },
@@ -13,12 +20,34 @@ const links = [
     <!-- Desktop links -->
     <div class="hidden items-center gap-1 md:flex">
       {links.map((l) => (
-        <a
-          href={l.href}
-          class="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/8 hover:text-white"
-        >
-          {l.label}
-        </a>
+        l.children ? (
+          <div class="relative" data-dropdown>
+            <button
+              type="button"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/8 hover:text-white"
+            >
+              {l.label}
+              <svg class="h-3.5 w-3.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div data-dropdown-menu class="absolute left-1/2 top-full z-50 hidden w-56 -translate-x-1/2 pt-2">
+              <div class="rounded-2xl border border-white/10 bg-[#0b0b0e]/95 p-1.5 shadow-xl backdrop-blur-xl">
+                {l.children.map((c) => (
+                  <a href={c.href} class="block rounded-xl px-3 py-2 text-sm text-slate-300 transition-colors hover:bg-white/8 hover:text-white">{c.label}</a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a
+            href={l.href}
+            class="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/8 hover:text-white"
+          >
+            {l.label}
+          </a>
+        )
       ))}
     </div>
 
@@ -39,36 +68,53 @@ const links = [
   <div id="mobile-menu" class="hidden border-t border-white/8 bg-[#0b0b0e]/95 backdrop-blur-xl md:hidden">
     <div class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
       {links.map((l) => (
-        <a href={l.href} class="rounded-xl px-4 py-3 text-base font-medium text-slate-200 transition-colors hover:bg-white/8 hover:text-white">{l.label}</a>
+        l.children ? (
+          <div>
+            <a href={l.href} class="rounded-xl px-4 py-3 text-base font-medium text-slate-200 transition-colors hover:bg-white/8 hover:text-white">{l.label}</a>
+            <div class="ml-3 mt-1 flex flex-col gap-1 border-l border-white/10 pl-3">
+              {l.children.map((c) => (
+                <a href={c.href} class="rounded-xl px-4 py-2 text-sm font-medium text-slate-400 transition-colors hover:bg-white/8 hover:text-white">{c.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={l.href} class="rounded-xl px-4 py-3 text-base font-medium text-slate-200 transition-colors hover:bg-white/8 hover:text-white">{l.label}</a>
+        )
       ))}
     </div>
   </div>
 
   <script>
-    const root = document.querySelector("[data-events-menu]");
-    const toggle = document.getElementById("events-toggle");
-    const menu = document.getElementById("events-menu");
-    const caret = toggle?.querySelector("svg");
+    document.querySelectorAll<HTMLElement>("[data-dropdown]").forEach((root) => {
+      const toggle = root.querySelector<HTMLButtonElement>("[data-dropdown-toggle]");
+      const menu = root.querySelector<HTMLElement>("[data-dropdown-menu]");
+      const caret = toggle?.querySelector("svg");
+      if (!toggle || !menu) return;
 
-    function closeMenu() {
-      menu?.classList.add("hidden");
-      toggle?.setAttribute("aria-expanded", "false");
-      caret?.classList.remove("rotate-180");
-    }
+      const close = () => {
+        menu.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+        caret?.classList.remove("rotate-180");
+      };
+      const open = () => {
+        menu.classList.remove("hidden");
+        toggle.setAttribute("aria-expanded", "true");
+        caret?.classList.add("rotate-180");
+      };
 
-    toggle?.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const open = menu?.classList.toggle("hidden") === false;
-      toggle.setAttribute("aria-expanded", String(open));
-      caret?.classList.toggle("rotate-180", open);
-    });
-
-    menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
-    document.addEventListener("click", (e) => {
-      if (!root?.contains(e.target as Node)) closeMenu();
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.contains("hidden") ? open() : close();
+      });
+      root.addEventListener("mouseenter", open);
+      root.addEventListener("mouseleave", close);
+      menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+      document.addEventListener("click", (e) => {
+        if (!root.contains(e.target as Node)) close();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
     });
   </script>
 </nav>
