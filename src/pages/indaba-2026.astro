@@ -4,6 +4,7 @@ import EventNav from "../components/EventNav.astro";
 
 const organisers = [
   { name: "Alexandra Barry", affiliation: "University of the Witwatersrand", image: "/images/people/alexandra.png" },
+  { name: "Elisha Komolafe", affiliation: "TODO", image: "/images/people/elisha_komolafe.JPG" },
   { name: "Geraud Nangue Tasse", affiliation: "University of the Witwatersrand", image: "/images/people/geraud.png" },
   { name: "Jenalea Rajab", affiliation: "DEI Projects", image: "/images/people/jenalea.png" },
   { name: "Kamryn Norton", affiliation: "Opti-Num Solutions · African Robotics Unit (UCT)", image: "/images/people/kam.png" },
@@ -44,7 +45,7 @@ const previousEditions = [
           ]}
         />
       </div>
-      <p class="mb-4 eyebrow">Workshop · 6th or 7th August 2026 · Lagos, Nigeria</p>
+      <p class="mb-4 eyebrow">Workshop · 7th August 2026 · Lagos, Nigeria</p>
       <h1 class="text-3xl md:text-5xl text-white leading-[1.08]">4th Workshop on <span class="text-spark-solid">Robotics &amp; Automation</span> in Africa</h1>
       <p class="mb-5 mt-3 text-lg md:text-xl font-semibold text-slate-300 leading-snug">Theme: LLMs in Robotics</p>
       <p class="max-w-2xl text-base leading-7 text-slate-400">
@@ -98,35 +99,38 @@ const previousEditions = [
       <p class="mb-2 eyebrow">Programme</p>
       <h2 class="text-2xl font-bold text-white">Workshop Schedule</h2>
     </div>
-
     <div class="reveal panel rounded-3xl p-6 mb-8">
       <div class="divide-y divide-white/5">
         <div class="flex gap-4 py-3">
-          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">09:00 – 09:20</div>
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">08:30 – 08:50</div>
           <div>
             <span class="mb-1.5 inline-block rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-cyan-200">Opening</span>
             <p class="text-sm font-semibold text-white">Welcome and Introduction</p>
+            <p class="text-xs text-slate-400">Jenalea Rajab</p>
           </div>
         </div>
         <div class="flex gap-4 py-3">
-          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">09:20 – 11:00</div>
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">08:50 – 10:30</div>
           <div>
             <span class="mb-1.5 inline-block rounded-full border border-orange-400/20 bg-orange-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-orange-200">Tutorial</span>
             <p class="text-sm font-semibold text-white">Interactive Tutorial</p>
+            <p class="text-xs text-slate-400">Sicelukwanda Zwane, assisted by Jenalea Rajab and Elisha Komolafe</p>
           </div>
         </div>
         <div class="flex gap-4 py-3">
-          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">11:00 – 11:45</div>
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">10:30 – 11:15</div>
           <div>
             <span class="mb-1.5 inline-block rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-emerald-200">Panel</span>
             <p class="text-sm font-semibold text-white">Panel Discussion</p>
+            <p class="text-xs text-slate-400">Dr. Olusola Ayoola, Dayo McIntosh, moderated by Ndivhuwo Makondo</p>
           </div>
         </div>
         <div class="flex gap-4 py-3">
-          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">11:45 – 12:00</div>
+          <div class="w-28 shrink-0 pt-0.5 text-xs font-medium text-slate-500">11:15 – 11:30</div>
           <div>
             <span class="mb-1.5 inline-block rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-cyan-200">Closing</span>
             <p class="text-sm font-semibold text-white">Closing Remarks and Call to Action</p>
+            <p class="text-xs text-slate-400">Jenalea Rajab</p>
           </div>
         </div>
       </div>
@@ -137,19 +141,39 @@ const previousEditions = [
       <p class="mb-2 eyebrow">Speakers</p>
       <h2 class="text-2xl font-bold text-white">Confirmed Speakers</h2>
     </div>
-
-    <div class="reveal panel rounded-3xl p-6 mb-8 text-center">
-      <div class="mb-5 flex flex-wrap justify-center gap-4">
-        {[0, 1, 2, 3].map(() => (
-          <div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-white/15 text-xl text-white/20">?</div>
-        ))}
+    <div class="grid gap-6 sm:grid-cols-2 mb-8">
+      <div class="reveal panel rounded-3xl p-6 text-center sm:text-left">
+        <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-start">
+          <img
+            src="images/people/olusola_ayoola.jpeg"
+            alt="Dr. Olusola Ayoola"
+            class="h-24 w-24 shrink-0 rounded-full object-cover border-2 border-white/10"
+          />
+          <div>
+            <p class="text-base font-semibold text-white">Dr. Olusola Ayoola</p>
+            <p class="mb-2 text-xs font-medium text-cyan-300">Founder & CEO, Robotics and Artificial Intelligence Nigeria (RAIN)</p>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Dr. Olusola Sayeed Ayoola is the Founder and CEO of Robotics and Artificial Intelligence Nigeria (RAIN), a leading organisation advancing AI and robotics talent and product development across Africa. He holds a PhD from the University of Manchester and has led groundbreaking projects spanning healthcare, security, and sustainability, including a passenger scream detection system for public buses, upper-limb rehabilitation exoskeletons, and carbon emission tracking drones, alongside smart medical devices such as a gyroscopic arm system for Erb's palsy patients and a smart drug dispenser for dementia care. Under his leadership, RAIN is expanding training programmes across the continent to grow the next generation of AI and robotics talent, and he regularly shares his expertise through keynotes and workshops, including at ICARS 2023 in Abu Dhabi. Widely recognised as a thought leader in the African tech ecosystem, he is a sought-after speaker and collaborator on sustainable technology solutions for Africa's unique challenges.
+            </p>
+          </div>
+        </div>
       </div>
-      <p class="text-sm text-slate-400">Speaker announcements coming soon.</p>
-      <p class="mt-1 text-xs text-slate-500">
-        Follow us on
-        <a href="https://www.linkedin.com/company/aarc-africa" target="_blank" rel="noopener noreferrer" class="text-cyan-300 hover:text-cyan-200 transition-colors">LinkedIn</a>
-        for updates.
-      </p>
+      <div class="reveal panel rounded-3xl p-6 text-center sm:text-left">
+        <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-start">
+          <img
+            src="images/people/dayo_mcintosh.jpeg"
+            alt="Dayo McIntosh"
+            class="h-24 w-24 shrink-0 rounded-full object-cover border-2 border-white/10"
+          />
+          <div>
+            <p class="text-base font-semibold text-white">Dayo McIntosh</p>
+            <p class="mb-2 text-xs font-medium text-cyan-300">Founder & CEO, Yateou Inc.</p>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Dayo McIntosh is a founder, strategist, and innovation leader working at the intersection of AI, robotics, cultural commerce, and clean beauty. Raised in a multicultural environment, she brings a cross-cultural lens to building teams, products, and systems that expand access and create opportunity for underrepresented communities. She is best known for building ADE, the first consumer-facing robot for the beauty and wellness industry, an achievement realised without a traditional technical background, through resourcefulness and curiosity. Guided by the belief that innovation is the great equalizer, she continues to build companies at the crossroads of culture and technology, including a new venture currently in stealth, with a mission to empower marginalized people to see themselves as innovators and architects of the future.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Organisers -->
